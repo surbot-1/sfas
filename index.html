@@ -402,3 +402,179 @@
       window.location.reload();
     } 
     
+    function autofill() {
+      /* latitude;
+       longitude; */ 
+      document.getElementById('franchise').value = 'OPKN Sangrur'; 
+      document.getElementById('fosname').value = 'Jaggi'; 
+      /* document.getElementById('ctopno').value = ''; 
+       document.getElementById('altno').value = ''; 
+       document.getElementById('emailid').value = ''; 
+       document.getElementById('posname').value = ''; 
+       document.getElementById('posgend').value = ''; 
+       document.getElementById('shopname').value = ''; 
+       document.getElementById('shopno').value = ''; 
+       document.getElementById('street').value = ''; 
+       document.getElementById('landmark').value = ''; */ 
+      document.getElementById('locality').value = 'Sangrur';
+      document.getElementById('city').value = 'Sangrur'; 
+      document.getElementById('state').value = 'Punjab'; 
+      document.getElementById('pincode').value = '148001'; 
+      /* document.getElementById('activation').value = ''; 
+       document.getElementById('mnp').value = ''; 
+       document.getElementById('recharge').value = ''; */
+      document.getElementById('visitedby').value = 'J S Patel JE(S&M) Sangrur'; 
+    }
+    
+    function previous() {
+      
+    }
+    
+    function preview() { 
+        previewready = true; 
+        cordsreadready = true; 
+        saveready = true; 
+        readready = false; 
+        removeready = false; 
+      /* latitude;
+       longitude; */ 
+      franchise = document.getElementById('franchise').value; 
+      fosname = document.getElementById('fosname').value; 
+      ctopno = document.getElementById('ctopno').value; 
+      altno = document.getElementById('altno').value; 
+      emailid = document.getElementById('emailid').value; 
+      posname = document.getElementById('posname').value; 
+      posgend = document.getElementById('posgend').value; 
+      shopname = document.getElementById('shopname').value; 
+      shopno = document.getElementById('shopno').value; 
+      street = document.getElementById('street').value; 
+      landmark = document.getElementById('landmark').value;
+      locality = document.getElementById('locality').value;
+      city = document.getElementById('city').value; 
+      state = document.getElementById('state').value; 
+      pincode = document.getElementById('pincode').value; 
+      activation = document.getElementById('activation').value; 
+      mnp = document.getElementById('mnp').value; 
+      recharge = document.getElementById('recharge').value; 
+      visitedby = document.getElementById('visitedby').value; 
+      
+      document.getElementById('p2').innerHTML ='';
+      document.getElementById('p2').innerHTML = 
+        'Latitude        : ' + latitude + '<br>' +
+        'Longitude       : ' + longitude ; 
+      document.getElementById('p3').innerHTML ='';
+      document.getElementById('p3').innerHTML = 
+        'Franchise       : ' + franchise + '<br>' +
+        'FOS Name        : ' + fosname + '<br>' + 
+        '<br>' +
+        'CTOPUP No       : ' + ctopno + '<br>' +
+        'Alternate No    : ' + altno + '<br>' +
+        'Email ID        : ' + emailid + '<br>' +
+        'POS Name        : ' + posname + '<br>' +
+        'Gender          : ' + posgend + '<br>' +
+        'Shop Name       : ' + shopname + '<br>' + 
+        '<br>' +
+        'Shop No         : ' + shopno + '<br>' +
+        'Street/Village  : ' + street + '<br>' +
+        'Landmark/PO     : ' + landmark + '<br>' +
+        'Locality/Tehsil : ' + locality + '<br>' +
+        'City/District   : ' + city + '<br>' +
+        'State/UT        : ' + state + '<br>' +
+        'PIN Code        : ' + pincode + '<br>' +
+        '<br>' +
+        'Avg. Activation PM : ' + activation + '<br>' +
+        'Avg. MNP PM        : ' + mnp + '<br>' +
+        'Avg. Recharge PM   : ' + recharge + '<br>' +
+        '<br>' +
+        'Visited By : ' + visitedby ; 
+    } 
+  
+  </script>
+  
+  <script>
+    
+    function save() { 
+      if (true) { 
+        previewready = false; 
+        cordsreadready = false; 
+        saveready = true; 
+        readready = false; 
+        removeready = true; 
+        time = getDateTime('12h').datetime; 
+        var request = db.transaction(['posbsnl'], 'readwrite')
+       .objectStore('posbsnl')
+       .add({ 
+           latitude: latitude, 
+           longitude: longitude, 
+           franchise: franchise, 
+           fosname: fosname, 
+           ctopno: ctopno, 
+           altno: altno, 
+           emailid: emailid, 
+           posname: posname,
+           posgend: posgend,
+           shopname: shopname, 
+           shopno: shopno, 
+           street: street, 
+           landmark: landmark, 
+           locality: locality, 
+           city: city, 
+           state: state, 
+           pincode: pincode, 
+           activation: activation, 
+           mnp: mnp, 
+           recharge: recharge, 
+           visitedby: visitedby, 
+           areamap: areamap, 
+           imagea: imagea, 
+           imageb: imageb, 
+           remark: remark, 
+           time: time
+       }); 
+       request.onsuccess = function(event) { 
+              document.getElementById('p2').innerHTML ='';
+              document.getElementById('p2').innerHTML =
+                 'Latitude  : ' + latitude + '<br>' +
+                 'Longitude : ' + longitude ; 
+              document.getElementById('p3').innerHTML ='';
+              document.getElementById('p3').innerHTML =
+                 'Franchise       : ' + franchise + '<br>' +
+                 'FOS Name        : ' + fosname + '<br>' + 
+                 '<br>' +
+                 'CTOPUP No       : ' + ctopno + '<br>' +
+                 'Alternate No    : ' + altno + '<br>' +
+                 'Email ID        : ' + emailid + '<br>' +
+                 'POS Name        : ' + posname + '<br>' +
+                 'Gender          : ' + posgend + '<br>' +
+                 'Shop Name       : ' + shopname + '<br>' + 
+                 '<br>' +
+                 'Shop No         : ' + shopno + '<br>' +
+                 'Street/Village  : ' + street + '<br>' +
+                 'Landmark/PO     : ' + landmark + '<br>' +
+                 'Locality/Tehsil : ' + locality + '<br>' +
+                 'City/District   : ' + city + '<br>' +
+                 'State/UT        : ' + state + '<br>' +
+                 'PIN Code        : ' + pincode + '<br>' +
+                 '<br>' +
+                 'Avg. Activation PM : ' + activation + '<br>' +
+                 'Avg. MNP PM        : ' + mnp + '<br>' +
+                 'Avg. Recharge PM   : ' + recharge + '<br>' +
+                 '<br>' +
+                 'Visited By : ' + visitedby ; 
+         
+                 /* document.getElementById('div5').innerHTML = ''; 
+                  document.getElementById('imagea').src = ''; 
+                  document.getElementById('imageb').src = ''; */ 
+                 areaMap(latitude, longitude); 
+                 document.getElementById('imagea').src = imagea; 
+                 document.getElementById('imageb').src = imageb; 
+                 
+         alert(ctopno + ' ' + 'saved successfully'); 
+       };  
+       request.onerror = function(event) {
+          alert(ctopno + ' ' + 'already exist');
+       }; 
+      } else {} 
+    }
+    
+    
