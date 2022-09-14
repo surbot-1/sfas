@@ -968,4 +968,183 @@
   
   </script> 
   
+  <script>
+    
+    function map() { 
+      if (togglemap) { 
+        togglemap = false; 
+        getLocation(); 
+        function getLocation() { 
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showLoc, errHand); 
+          } 
+        } 
+      } else if(!togglemap) { 
+        togglemap = true; 
+        document.getElementById('div5').innerHTML = ''; 
+      }
+    function showLoc(pos) {
+      var latt = pos.coords.latitude;
+      var long = pos.coords.longitude;
+      var lattlong = new google.maps.LatLng(latt, long);
+      var OPTions = {
+        center: lattlong,
+        zoom: 16,
+        mapTypeControl: true,
+        navigationControlOptions: {
+          style: google.maps.NavigationControlStyle.SMALL,
+        }, 
+      };
+      var mapg = new google.maps.Map(
+        document.getElementById('div5'),
+        OPTions 
+      );
+      var markerg = new google.maps.Marker({
+        position: lattlong,
+        map: mapg,
+        title: 'You are here!',
+      }); 
+    } 
+    function errHand(err) {
+      switch (err.code) {
+        case err.PERMISSION_DENIED:
+          document.getElementById('p1').innerHTML =
+            'The application does not have the permission ' +
+            'to make use of location services';
+          break;
+        case err.POSITION_UNAVAILABLE:
+          document.getElementById('p1').innerHTML = 
+          'The location of the device is uncertain';
+          break;
+        case err.TIMEOUT:
+          document.getElementById('p1').innerHTML = 
+          'The request to get user location timed out';
+          break;
+        case err.UNKNOWN_ERROR:
+          document.getElementById('p1').innerHTML =
+            'Time to fetch location information exceeded' +
+            'the maximum timeout interval';
+          break;
+      }
+     }
+    } 
+    
+function areaMap(latitude, longitude) { 
+   showLoc(); 
+   function showLoc(pos) {
+      /* latt = pos.coords.latitude;
+       long = pos.coords.longitude; */ 
+      var latt = latitude; 
+      var long = longitude; 
+      var lattlong = new google.maps.LatLng(latt, long);
+      var OPTions = {
+        center: lattlong,
+        zoom: 16,
+        mapTypeControl: true,
+        navigationControlOptions: {
+          style: google.maps.NavigationControlStyle.SMALL,
+        }, 
+      };
+      var mapg = new google.maps.Map(
+        document.getElementById('div5'),
+        OPTions 
+      );
+      var markerg = new google.maps.Marker({
+        position: lattlong,
+        map: mapg,
+        title: 'You are here!',
+      }); 
+   } 
+}
   
+function captureA() { 
+  document.getElementById('filea').click(); 
+  /* var ele = document.getElementById('filea'); 
+   ele.addEventListener('change', 'previewFileA'); */ 
+} 
+   
+function captureB() { 
+  document.getElementById('fileb').click(); 
+  /* var ele = document.getElementById('fileb'); 
+   ele.addEventListener('change', 'previewFileB'); */ 
+} 
+    
+function previewFileA() {
+  var preview = document.getElementById('imagea');
+  var file = document.getElementById('filea').files[0];
+  var reader = new FileReader();
+  reader.addEventListener("load", function () {
+    /* convert image file to base64 string */ 
+    preview.src = reader.result; 
+    imagea = reader.result; 
+  }, false);
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+} 
+    
+function previewFileB() {
+  var preview = document.querySelector('#imageb');
+  var file = document.querySelector('#fileb').files[0];
+  var reader = new FileReader();
+  reader.addEventListener("load", function () {
+    /* convert image file to base64 string */ 
+    preview.src = reader.result; 
+    imageb = reader.result; 
+  }, false);
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+} 
+  
+function removeA() { 
+  imagea = ''; 
+  document.getElementById('imagea').src = ''; 
+} 
+    
+function removeB() { 
+  imageb = ''; 
+  document.getElementById('imageb').src = ''; 
+}
+    
+</script> 
+  
+  <script> 
+                function getDateTime(h) { 
+                     var datetime; var date; var time;
+                     var  today = new Date();
+                     var day   = today.getDate() < 10 ? '0' + today.getDate() : today.getDate() ; 
+                     var month = today.getMonth() < 9 ? '0' + (today.getMonth() + 1) : (today.getMonth() + 1) ;              
+                     var year   = today.getFullYear() < 10 ? '0' + today.getFullYear() : today.getFullYear() ;    
+                     var hours   = today.getHours() < 10 ? '0' + today.getHours() : today.getHours() ;
+                     var minutes   = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes() ;     
+                     var seconds   = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds() ; 
+                     var gmt = '+0530'
+                     if(h='12h') { 
+                     var part = hours < 12 ? 'AM' : 'PM' ;
+                     hours = hours % 12; 
+                     hours = hours ? hours : 12 ; hours = hours<10 ? '0'+hours : hours;
+                     date = day +'.'+ month +'.'+ year ;
+                     time = hours +':'+ minutes +' '+ part ; 
+                     datetime = date +' '+ time ; 
+                            /* if(sec) {   
+                                date = day +'.'+ month +'.'+ year ;
+                                time = hours +':'+ minutes +':'+ seconds +' '+ part  +' '+ gmt ;
+                                } */
+                      } else if (h=='24h') {
+                              date = day +'.'+ month +'.'+ year ;
+                              time = hours +':'+ minutes +':'+ seconds +' '+ gmt ; 
+                              datetime = date +' '+ time ; 
+                      } 
+                      var obj = { 
+                        date: date, 
+                        time: time, 
+                        datetime: datetime
+                      }; 
+                      return obj; 
+                 } 
+                 </script> 
+
+  
+  </body>
+</html>
