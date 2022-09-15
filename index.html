@@ -836,6 +836,7 @@
         saveready = true; 
         readready = false; 
         removeready = true; */
+        preview(); 
         time = getDateTime('12h').datetime; 
         var request = db.transaction(['posbsnl'], 'readwrite')
        .objectStore('posbsnl')
