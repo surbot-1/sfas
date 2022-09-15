@@ -141,4 +141,1011 @@
     }
 
   </style>
+  
+  </head>
+ 
+
+<body>
+
+  <div class='div1'> 
+    editApp - Sales Force Automation System - BSNL 
+  </div> 
+ 
+  <div class='div2' id='div2'>
+  <button class='button1' onclick='back()'>
+    Back
+  </button> 
+  <button class='button2' onclick='getCoordinates()'>
+    Coordinates
+  </button>
+  <button class='button2' onclick='map()'>
+    Map
+  </button> 
+  <button class='button2' onclick='refresh()'>
+    New
+  </button> 
+  <button class='button2' onclick='edit()'>
+    Edit
+  </button> 
+  <button class='button2' onclick='autofill()'>
+    Autofill
+  </button> 
+  <button class='button2' onclick='previous()'>
+    Previous
+  </button> 
+  <button class="button2" onclick='read()'>
+    Read
+  </button> 
+  <button class='button2' onclick='readAll()'>
+    Read All
+  </button> 
+  <button class='button2' onclick='update()'>
+    Update
+  </button>
+  <button class='button2' onclick='save()'>
+    Save
+  </button> 
+  <button class='button2' onclick='remove()'>
+    Delete
+  </button>  
+  </div> 
+  
+  <p class='p1' id='p1'> 
+  </p> 
+  
+  <div class='div3' id='div3'> 
+  
+  <div class='posinfo' id='div4'>
+  
+  <p class='p2' id='p2'>
+    Latitude : <br> 
+    Longitude : 
+  </p>
+    
+  <p class='p3' id='p3'>
+    <input type='text' class='input' id='franchise' placeholder='Franchise Name and Code'> Franchise Name and Code <br>
+    <input type='text' class='input' id='fosname' placeholder='FOS Name and Code'> FOS Name and Code <br>
+    <br>
+    <input type='text' class='input' id='ctopno' placeholder='CTOPUP No.'> CTOPUP No. <br>
+    <input type='text' class='input' id='altno' placeholder='Alternate No.'> Alternate No. <br>
+    <input type='text' class='input' id='emailid' placeholder='Email ID'> Email ID <br>
+    <input type='text' class='input' id='posname' placeholder='POS Name'> POS Name <br>
+    <input type='text' class='input' id='posgend' placeholder='Gender'> Gender <br>
+    <input type='text' class='input' id='shopname' placeholder='Shop Name'> Shop Name <br>
+    <br>
+    <input type='text' class='input' id='shopno' placeholder='Shop No.'> Shop No. <br>
+    <input type='text' class='input' id='street' placeholder='Street/Village'> Street/Village <br>
+    <input type='text' class='input' id='landmark' placeholder='Landmark/PO'> LandmarkP/PO <br>
+    <input type='text' class='input' id='locality' placeholder='Locality/Tehsil'> Locality/Tehsil <br>
+    <input type='text' class='input' id='city' placeholder='City/District'> City/District <br>
+    <input type='text' class='input' id='state' placeholder='State/UT'> State/UT <br>
+    <input type='text' class='input' id='pincode' placeholder='PIN Code'> PIN Code <br>
+    <br> 
+    <input type='text' class='input' id='activation' placeholder='Avg. Activation PM'> Avg. Activation PM <br>
+    <input type='text' class='input' id='mnp' placeholder='Avg. MNP PM'> Avg. MNP PM <br>
+    <input type='text' class='input' id='recharge' placeholder='Avg. Recharge PM'> Avg. Recharge PM <br> 
+    <br> 
+    <input type='text' class='input' id='visitedby' placeholder='Visited By'> Visited By
+    <input type='button' class='input' id='preview' value='Preview' onclick='preview()' style='margin-left:80px;'> 
+  </p> 
+  </div> 
+  
+  <div class='posinfo' id='div5'>
+    <div class='image' id='div6'>
+    </div>
+    <div class='image' id='div7'>
+    </div>
+    <div class='image' id='div8'>
+    </div>
+  </div>
+    
+  </div> 
+  
+  <div class='div10' id='div10'>
+  <div class='image10' id='div10a'>  
+    <input type='button' id='buttona' value='Capture' onclick='captureA()'> 
+    <input type='button' id='removea' value='Remove' onclick='removeA()'>
+    <input type='file' id='filea' onchange='previewFileA()' style='display:none;'><br>
+    <img id='imagea' src='' width='520'>
+  </div> 
+  <div class='image10' id='div10b'> 
+    <input type='button' id='buttonb' value='Capture' onclick='captureB()'> 
+    <input type='button' id='removeb' value='Remove' onclick='removeB()'>
+    <input type='file' id='fileb' onchange='previewFileB()' style='display:none;'><br>
+    <img id='imageb' src='' width='520'>
+  </div> 
+  </div> 
+  
+  <div class='div11' id='div11'> 
+      Accuracy of geolocation depends on device. Recommended device - Apple's iPhone. 
+      We respect our client's privacy. We do not store or share client's information. <br>
+      This is an experimental project devoloped by editApp-a step ahead and owned by J S Patel. 
+  </div> 
+  
+  <p class='p4' id='p4'></p> 
+  <p class='p5' id='p5'></p> 
+  <p class='p6' id='p6'></p> 
+  
+  <script src='https://maps.google.com/maps/api/js?sensor=false'></script> 
+  
+  <script type = 'text/javascript'> 
+         
+         /* prefixes of implementation that we want to test */ 
+         window.indexedDB = window.indexedDB || window.mozIndexedDB || 
+         window.webkitIndexedDB || window.msIndexedDB;
+         
+         /* prefixes of window.IDB objects */ 
+         window.IDBTransaction = window.IDBTransaction || 
+         window.webkitIDBTransaction || window.msIDBTransaction;
+         window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || 
+         window.msIDBKeyRange; 
+         
+         if (!window.indexedDB) {
+            window.alert('Your browser does not support a stable version of IndexedDB.'); 
+         }  /* else { alert('Ok'); } */ 
+    
+         var db; 
+         openDB(); 
+      function openDB() {
+         var request = window.indexedDB.open('posbsnldb', 1); 
+         request.onerror = function(event) {
+            alert('error:');
+         }; 
+         request.onsuccess = function(event) {
+            db = request.result;
+            /* alert('success: '+ db); */ 
+         }; 
+         request.onupgradeneeded = function(event) {
+            var db = event.target.result;
+            var objectStore = db.createObjectStore('osbsnl', {keyPath: 'ctopno'}); 
+            objectStore.createIndex('shopname', 'shopname', { unique: false });
+         }; 
+      }
+    
+  </script>
+  
+  <script> 
+    
+    var latitude = 0; 
+    var longitude= 0; 
+    var franchise=''; 
+    var fosname=''; 
+    var ctopno=''; 
+    var altno=''; 
+    var emailid=''; 
+    var posname=''; 
+    var posgend=''; 
+    var shopname=''; 
+    var shopno=''; 
+    var street=''; 
+    var landmark='';
+    var locality='';
+    var city=''; 
+    var state=''; 
+    var pincode=''; 
+    var activation=''; 
+    var mnp=''; 
+    var recharge=''; 
+    var visitedby=''; 
+    var areamap=''; 
+    var imagea=''; 
+    var imageb='';
+    var remark=''; 
+    var time=''; 
+    
+    var togglecoords = true; 
+    var togglemap = true; 
+    var togglereadall = true; 
+    
+    var previewready = true; 
+    var cordsreadready = true; 
+    var saveready = false; 
+    var readready = true; 
+    var removeready = false; 
+    
+  </script> 
+  
+  
+  <script> 
+    
+    function getCoordinates() {
+      if (togglecoords) { 
+        togglecoords = false; 
+        navigator.geolocation.getCurrentPosition(showLoc, errHand); 
+      } else if (!togglecoords) { 
+        togglecoords = true; 
+        latitude = 0; 
+        longitude = 0; 
+        document.getElementById('p2').innerHTML =
+        'Latitude  : ' + 
+        '<br>' + 
+        'Longitude : '; 
+      }
+    } 
+    function showLoc(pos) { 
+      document.getElementById('p2').innerHTML = 
+        'Latitude  : ' +
+        pos.coords.latitude +
+        '<br>' + 
+        'Longitude : ' +
+        pos.coords.longitude; 
+      latitude = pos.coords.latitude ;
+      longitude = pos.coords.longitude ;  
+    } 
+    function errHand(err) { 
+      switch (err.code) { 
+        case err.PERMISSION_DENIED:
+          document.getElementById('p1').innerHTML =
+            'The application does not have the ' +
+            'permission to make use of location services';
+          break; 
+        case err.POSITION_UNAVAILABLE:
+          document.getElementById('p1').innerHTML = 'The location of the device is uncertain';
+          break; 
+        case err.TIMEOUT:
+          document.getElementById('p1').innerHTML = 'The request to get user location timed out'; 
+          break; 
+        case err.UNKNOWN_ERROR:
+          document.getElementById('p1').innerHTML =
+            'Time to fetch location information exceeded' +
+            'the maximum timeout interval';
+          break; 
+      } 
+    } 
+    
+  </script>
+  
+  <script> 
+    
+    function refresh() {
+      /* window.location.replace('https://surbot-1.github.io/geolocation4/); */ 
+      window.location.reload();
+    } 
+    
+    function autofill() {
+      /* latitude;
+       longitude; */ 
+      document.getElementById('franchise').value = 'OPKN Sangrur'; 
+      document.getElementById('fosname').value = 'Jaggi'; 
+      /* document.getElementById('ctopno').value = ''; 
+       document.getElementById('altno').value = ''; 
+       document.getElementById('emailid').value = ''; 
+       document.getElementById('posname').value = ''; 
+       document.getElementById('posgend').value = ''; 
+       document.getElementById('shopname').value = ''; 
+       document.getElementById('shopno').value = ''; 
+       document.getElementById('street').value = ''; 
+       document.getElementById('landmark').value = ''; */ 
+      document.getElementById('locality').value = 'Sangrur';
+      document.getElementById('city').value = 'Sangrur'; 
+      document.getElementById('state').value = 'Punjab'; 
+      document.getElementById('pincode').value = '148001'; 
+      /* document.getElementById('activation').value = ''; 
+       document.getElementById('mnp').value = ''; 
+       document.getElementById('recharge').value = ''; */
+      document.getElementById('visitedby').value = 'J S Patel JE(S&M) Sangrur'; 
+    }
+    
+    function previous() {
+      
+    }
+    
+    function preview() { 
+        previewready = true; 
+        cordsreadready = true; 
+        saveready = true; 
+        readready = false; 
+        removeready = false; 
+      /* latitude;
+       longitude; */ 
+      franchise = document.getElementById('franchise').value; 
+      fosname = document.getElementById('fosname').value; 
+      ctopno = document.getElementById('ctopno').value; 
+      altno = document.getElementById('altno').value; 
+      emailid = document.getElementById('emailid').value; 
+      posname = document.getElementById('posname').value; 
+      posgend = document.getElementById('posgend').value; 
+      shopname = document.getElementById('shopname').value; 
+      shopno = document.getElementById('shopno').value; 
+      street = document.getElementById('street').value; 
+      landmark = document.getElementById('landmark').value;
+      locality = document.getElementById('locality').value;
+      city = document.getElementById('city').value; 
+      state = document.getElementById('state').value; 
+      pincode = document.getElementById('pincode').value; 
+      activation = document.getElementById('activation').value; 
+      mnp = document.getElementById('mnp').value; 
+      recharge = document.getElementById('recharge').value; 
+      visitedby = document.getElementById('visitedby').value; 
+      
+      document.getElementById('p2').innerHTML ='';
+      document.getElementById('p2').innerHTML = 
+        'Latitude        : ' + latitude + '<br>' +
+        'Longitude       : ' + longitude ; 
+      document.getElementById('p3').innerHTML ='';
+      document.getElementById('p3').innerHTML = 
+        'Franchise       : ' + franchise + '<br>' +
+        'FOS Name        : ' + fosname + '<br>' + 
+        '<br>' +
+        'CTOPUP No       : ' + ctopno + '<br>' +
+        'Alternate No    : ' + altno + '<br>' +
+        'Email ID        : ' + emailid + '<br>' +
+        'POS Name        : ' + posname + '<br>' +
+        'Gender          : ' + posgend + '<br>' +
+        'Shop Name       : ' + shopname + '<br>' + 
+        '<br>' +
+        'Shop No         : ' + shopno + '<br>' +
+        'Street/Village  : ' + street + '<br>' +
+        'Landmark/PO     : ' + landmark + '<br>' +
+        'Locality/Tehsil : ' + locality + '<br>' +
+        'City/District   : ' + city + '<br>' +
+        'State/UT        : ' + state + '<br>' +
+        'PIN Code        : ' + pincode + '<br>' +
+        '<br>' +
+        'Avg. Activation PM : ' + activation + '<br>' +
+        'Avg. MNP PM        : ' + mnp + '<br>' +
+        'Avg. Recharge PM   : ' + recharge + '<br>' +
+        '<br>' +
+        'Visited By : ' + visitedby ; 
+    } 
+  
+  </script>
+  
+  <script>
+    
+    function save() { 
+      if (true) { 
+        previewready = false; 
+        cordsreadready = false; 
+        saveready = true; 
+        readready = false; 
+        removeready = true; 
+        time = getDateTime('12h').datetime; 
+        var request = db.transaction(['posbsnl'], 'readwrite')
+       .objectStore('posbsnl')
+       .add({ 
+           latitude: latitude, 
+           longitude: longitude, 
+           franchise: franchise, 
+           fosname: fosname, 
+           ctopno: ctopno, 
+           altno: altno, 
+           emailid: emailid, 
+           posname: posname,
+           posgend: posgend,
+           shopname: shopname, 
+           shopno: shopno, 
+           street: street, 
+           landmark: landmark, 
+           locality: locality, 
+           city: city, 
+           state: state, 
+           pincode: pincode, 
+           activation: activation, 
+           mnp: mnp, 
+           recharge: recharge, 
+           visitedby: visitedby, 
+           areamap: areamap, 
+           imagea: imagea, 
+           imageb: imageb, 
+           remark: remark, 
+           time: time
+       }); 
+       request.onsuccess = function(event) { 
+              document.getElementById('p2').innerHTML ='';
+              document.getElementById('p2').innerHTML =
+                 'Latitude  : ' + latitude + '<br>' +
+                 'Longitude : ' + longitude ; 
+              document.getElementById('p3').innerHTML ='';
+              document.getElementById('p3').innerHTML =
+                 'Franchise       : ' + franchise + '<br>' +
+                 'FOS Name        : ' + fosname + '<br>' + 
+                 '<br>' +
+                 'CTOPUP No       : ' + ctopno + '<br>' +
+                 'Alternate No    : ' + altno + '<br>' +
+                 'Email ID        : ' + emailid + '<br>' +
+                 'POS Name        : ' + posname + '<br>' +
+                 'Gender          : ' + posgend + '<br>' +
+                 'Shop Name       : ' + shopname + '<br>' + 
+                 '<br>' +
+                 'Shop No         : ' + shopno + '<br>' +
+                 'Street/Village  : ' + street + '<br>' +
+                 'Landmark/PO     : ' + landmark + '<br>' +
+                 'Locality/Tehsil : ' + locality + '<br>' +
+                 'City/District   : ' + city + '<br>' +
+                 'State/UT        : ' + state + '<br>' +
+                 'PIN Code        : ' + pincode + '<br>' +
+                 '<br>' +
+                 'Avg. Activation PM : ' + activation + '<br>' +
+                 'Avg. MNP PM        : ' + mnp + '<br>' +
+                 'Avg. Recharge PM   : ' + recharge + '<br>' +
+                 '<br>' +
+                 'Visited By : ' + visitedby ; 
+         
+                 /* document.getElementById('div5').innerHTML = ''; 
+                  document.getElementById('imagea').src = ''; 
+                  document.getElementById('imageb').src = ''; */ 
+                 areaMap(latitude, longitude); 
+                 document.getElementById('imagea').src = imagea; 
+                 document.getElementById('imageb').src = imageb; 
+                 
+         alert(ctopno + ' ' + 'saved successfully'); 
+       };  
+       request.onerror = function(event) {
+          alert(ctopno + ' ' + 'already exist');
+       }; 
+      } else {} 
+    }
+    
+    function read() { 
+      if (true) { 
+        previewready = false; 
+        cordsreadready = false; 
+        saveready = false; 
+        readready = true; 
+        removeready = true; 
+        
+        var request; 
+        var toread = document.getElementById('ctopno').value; 
+        if (toread != '') { 
+            var transaction = db.transaction(['posbsnl']);
+            var objectStore = transaction.objectStore('posbsnl');
+            request = objectStore.get(toread); 
+        } /* else { 
+           toread = document.getElementById('shopname').value; 
+           var transaction = db.transaction(['posbsnl']);
+           var objectStore = transaction.objectStore('posbsnl');
+           var index = objectStore.index('shponame');
+           request = index.get(toread); 
+         } */ 
+       request.onsuccess = function(event) {
+               /* Do something with the request.result! */ 
+               if(request.result) { 
+                  latitude = request.result.latitude; 
+                  longitude = request.result.longitude; 
+                  franchise = request.result.franchise; 
+                  fosname = request.result.fosname; 
+                  ctopno = request.result.ctopno;  
+                  altno = request.result.altno;  
+                  emailid = request.result.emailid; 
+                  posname = request.result.posname;  
+                  posgend = request.result.posgend;  
+                  shopname = request.result.shopname; 
+                  shopno = request.result.shopno; 
+                  street = request.result.street;  
+                  landmark = request.result.landmark;  
+                  locality = request.result.locality; 
+                  city = request.result.city;  
+                  state = request.result.state;  
+                  pincode = request.result.pincode;  
+                  activation = request.result.activation;  
+                  mnp = request.result.mnp;  
+                  recharge = request.result.recharge;  
+                  visitedby = request.result.visitedby; 
+                  areamap = request.result.areamap;  
+                  imagea = request.result.imagea; 
+                  imageb = request.result.imageb; 
+                 document.getElementById('p2').innerHTML ='';
+                 document.getElementById('p2').innerHTML =
+                 'Latitude  : ' + latitude + '<br>' +
+                 'Longitude : ' + longitude ; 
+                 document.getElementById('p3').innerHTML ='';
+                 document.getElementById('p3').innerHTML =
+                 'Franchise       : ' + franchise + '<br>' +
+                 'FOS Name        : ' + fosname + '<br>' + 
+                 '<br>' +
+                 'CTOPUP No       : ' + ctopno + '<br>' +
+                 'Alternate No    : ' + altno + '<br>' +
+                 'Email ID        : ' + emailid + '<br>' +
+                 'POS Name        : ' + posname + '<br>' +
+                 'Gender          : ' + posgend + '<br>' +
+                 'Shop Name       : ' + shopname + '<br>' + 
+                 '<br>' +
+                 'Shop No         : ' + shopno + '<br>' +
+                 'Street/Village  : ' + street + '<br>' +
+                 'Landmark/PO     : ' + landmark + '<br>' +
+                 'Locality/Tehsil : ' + locality + '<br>' +
+                 'City/District   : ' + city + '<br>' +
+                 'State/UT        : ' + state + '<br>' +
+                 'PIN Code        : ' + pincode + '<br>' +
+                 '<br>' +
+                 'Avg. Activation PM : ' + activation + '<br>' +
+                 'Avg. MNP PM        : ' + mnp + '<br>' +
+                 'Avg. Recharge PM   : ' + recharge + '<br>' +
+                 '<br>' +
+                 'Visited By : ' + visitedby ; 
+                 areaMap(latitude, longitude); 
+                 document.getElementById('imagea').src = imagea; 
+                 document.getElementById('imageb').src = imageb; 
+                 
+               } else {
+                  alert(toread + ' ' + 'could not be found!');
+               }
+            }; 
+        request.onerror = function(event) {
+               alert('Unable to retrieve!');
+            }; 
+      } else {} 
+    } 
+    
+    function readAll() { 
+        if (togglereadall) { 
+            togglereadall = false; 
+            document.getElementById('p6').innerHTML =''; 
+            document.getElementById('p6').innerHTML += 
+            'All POS(Point Of Sale)' + '<br>';
+            var serialno = 1; 
+            var transaction = db.transaction(['posbsnl']);
+            var objectStore = transaction.objectStore('posbsnl');
+        
+            objectStore.openCursor().onsuccess = function(event) {
+               var cursor = event.target.result; 
+              
+               if (cursor) { 
+                  /* var latitude = cursor.value.latitude; 
+                   var longitude = cursor.value.longitude; 
+                   var franchise = cursor.value.franchise; 
+                   var fosname = cursor.value.fosname; */ 
+                  var ctopno = cursor.key;  
+                  var altno = cursor.value.altno;  
+                  /* var emailid = cursor.value.emailid; 
+                   var posname = cursor.value.posname;  
+                   var posgend = cursor.value.posgend; */ 
+                  var shopname = cursor.value.shopname; 
+                  /* var shopno = cursor.value.shopno; */ 
+                  var street = cursor.value.street;  
+                  /* var landmark = cursor.value.landmark; */ 
+                  var locality = cursor.value.locality; 
+                  /* var city = cursor.value.city;  
+                   var state = cursor.value.state;  
+                   var pincode = cursor.value.pincode;  
+                   var activation = cursor.value.activation;  
+                   var mnp = cursor.value.mnp;  
+                   var recharge = cursor.value.recharge;  
+                   var visitedby = cursor.value.visitedby; 
+                   var areamap = cursor.value.areamap;  
+                   var imagea = cursor.value.imagea;  
+                   var imageb = cursor.value.imageb; 
+                  document.getElementById('p6').innerHTML += 
+                  'Serial No : ' + serialno + '<br>' +
+                  'Latitude  : ' + latitude + '<br>' +
+                  'Longitude : ' + longitude + '<br>' + 
+                  '<br>' + 
+                  'Franchise       : ' + franchise + '<br>' +
+                  'FOS Name        : ' + fosname + '<br>' + 
+                  '<br>' +
+                  'CTOPUP No       : ' + ctopno + '<br>' +
+                  'Alternate No    : ' + altno + '<br>' +
+                  'Email ID        : ' + emailid + '<br>' +
+                  'POS Name        : ' + posname + '<br>' +
+                  'Gender          : ' + posgend + '<br>' +
+                  'Shop Name       : ' + shopname + '<br>' + 
+                  '<br>' +
+                  'Shop No         : ' + shopno + '<br>' +
+                  'Street/Village  : ' + street + '<br>' +
+                  'Landmark/PO     : ' + landmark + '<br>' +
+                  'Locality/Tehsil : ' + locality + '<br>' +
+                  'City/District   : ' + city + '<br>' +
+                  'State/UT        : ' + state + '<br>' +
+                  'PIN Code        : ' + pincode + '<br>' +
+                  '<br>' +
+                  'Avg. Activation PM : ' + activation + '<br>' +
+                  'Avg. MNP PM        : ' + mnp + '<br>' +
+                  'Avg. Recharge PM   : ' + recharge + '<br>' +
+                  '<br>' +
+                  'Visited By : ' + visitedby + '<br>' +
+                  '<br>' + 
+                  '<br>' ; */ 
+                  document.getElementById('p6').innerHTML += 
+                    serialno + '.' + ' ' + 
+                    ctopno + ' ' + 
+                    altno + ' ' + 
+                    shopname + ' ' + 
+                    street + ' ' +
+                    locality + '<br>'; 
+                  serialno++; 
+                  cursor.continue();
+               } else { 
+                  document.getElementById('p6').innerHTML += 
+                  'Total POS Count = ' + (serialno-1); 
+                  /* alert('No more entries!'); */ 
+               }
+            }; 
+        } else if (!togglereadall) { 
+          togglereadall = true; 
+          document.getElementById('p6').innerHTML = ''; 
+        }
+    } 
+    
+    </script> 
+  
+  <script>
+    
+    function edit() { 
+      document.getElementById('p3').innerHTML = ''; 
+      var doc1 = document.getElementById('p3'); 
+      var child1 = 
+    "<input type='text' class='input' id='franchise' placeholder='Franchise Name and Code'> Franchise Name and Code <br>" + 
+    "<input type='text' class='input' id='fosname' placeholder='FOS Name and Code'> FOS Name and Code <br>" +                         
+    "<br>" + 
+    "<input type='text' class='input' id='ctopno' placeholder='CTOPUP No.'> CTOPUP No. <br>" + 
+    "<input type='text' class='input' id='altno' placeholder='Alternate No.'> Alternate No. <br>" + 
+    "<input type='text' class='input' id='emailid' placeholder='Email ID'> Email ID <br>" + 
+    "<input type='text' class='input' id='posname' placeholder='POS Name'> POS Name <br>" + 
+    "<input type='text' class='input' id='posgend' placeholder='Gender'> Gender <br>" + 
+    "<input type='text' class='input' id='shopname' placeholder='Shop Name'> Shop Name <br>" + 
+    "<br>" + 
+    "<input type='text' class='input' id='shopno' placeholder='Shop No.'> Shop No. <br>" + 
+    "<input type='text' class='input' id='street' placeholder='Street/Village'> Street/Village <br>" + 
+    "<input type='text' class='input' id='landmark' placeholder='Landmark/PO'> LandmarkP/PO <br>" + 
+    "<input type='text' class='input' id='locality' placeholder='Locality/Tehsil'> Locality/Tehsil <br>" +
+    "<input type='text' class='input' id='city' placeholder='City/District'> City/District <br>" + 
+    "<input type='text' class='input' id='state' placeholder='State/UT'> State/UT <br>" + 
+    "<input type='text' class='input' id='pincode' placeholder='PIN Code'> PIN Code <br>" + 
+    "<br>" + 
+    "<input type='text' class='input' id='activation' placeholder='Avg. Activation PM'> Avg. Activation PM <br>" + 
+    "<input type='text' class='input' id='mnp' placeholder='Avg. MNP PM'> Avg. MNP PM <br>" + 
+    "<input type='text' class='input' id='recharge' placeholder='Avg. Recharge PM'> Avg. Recharge PM <br>" + 
+    "<br>" +
+    "<input type='text' class='input' id='visitedby' placeholder='Visited By'> Visited By" + 
+    "<input type='button' class='input' id='preview' value='Preview' onclick='preview()' style='margin-left:80px;'>" + 
+    "</p>" ;
+      doc1.insertAdjacentHTML('afterbegin', child1); 
+      
+      document.getElementById('p2').innerHTML = 
+        'Latitude :' + latitude + 
+        '<br>' +
+        'Longitude :' + longitude;
+      document.getElementById('franchise').value = franchise; 
+      document.getElementById('fosname').value = fosname; 
+      document.getElementById('ctopno').value = ctopno; 
+      document.getElementById('altno').value = altno; 
+      document.getElementById('emailid').value = emailid; 
+      document.getElementById('posname').value = posname; 
+      document.getElementById('posgend').value = poshend; 
+      document.getElementById('shopname').value = shopname; 
+      document.getElementById('shopno').value = shopno; 
+      document.getElementById('street').value = street; 
+      document.getElementById('landmark').value = landmark;
+      document.getElementById('locality').value = locality;
+      document.getElementById('city').value = city; 
+      document.getElementById('state').value = state; 
+      document.getElementById('pincode').value = pincode; 
+      document.getElementById('activation').value = activation; 
+      document.getElementById('mnp').value = mnp; 
+      document.getElementById('recharge').value = recharge; 
+      document.getElementById('visitedby').value = visitedby; 
+      areaMap(latitude, longitude); 
+      document.getElementById('imagea').src = imagea; 
+      document.getElementById('imageb').src = imageb; 
+    } 
+  
+  </script> 
+  
+  <script>
+    
+    function update() {
+      if (true) { 
+        previewready = false; 
+        cordsreadready = false; 
+        saveready = true; 
+        readready = false; 
+        removeready = true; 
+        time = getDateTime('12h').datetime; 
+        var request = db.transaction(['posbsnl'], 'readwrite')
+       .objectStore('posbsnl')
+       .put({ 
+           latitude: latitude, 
+           longitude: longitude, 
+           franchise: franchise, 
+           fosname: fosname, 
+           ctopno: ctopno, 
+           altno: altno, 
+           emailid: emailid, 
+           posname: posname,
+           posgend: posgend,
+           shopname: shopname, 
+           shopno: shopno, 
+           street: street, 
+           landmark: landmark, 
+           locality: locality, 
+           city: city, 
+           state: state, 
+           pincode: pincode, 
+           activation: activation, 
+           mnp: mnp, 
+           recharge: recharge, 
+           visitedby: visitedby, 
+           areamap: areamap, 
+           imagea: imagea, 
+           imageb: imageb, 
+           remark: remark, 
+           time: time
+       }); 
+       request.onsuccess = function(event) { 
+              document.getElementById('p2').innerHTML ='';
+              document.getElementById('p2').innerHTML =
+                 'Latitude  : ' + latitude + '<br>' +
+                 'Longitude : ' + longitude ; 
+              document.getElementById('p3').innerHTML ='';
+              document.getElementById('p3').innerHTML =
+                 'Franchise       : ' + franchise + '<br>' +
+                 'FOS Name        : ' + fosname + '<br>' + 
+                 '<br>' +
+                 'CTOPUP No       : ' + ctopno + '<br>' +
+                 'Alternate No    : ' + altno + '<br>' +
+                 'Email ID        : ' + emailid + '<br>' +
+                 'POS Name        : ' + posname + '<br>' +
+                 'Gender          : ' + posgend + '<br>' +
+                 'Shop Name       : ' + shopname + '<br>' + 
+                 '<br>' +
+                 'Shop No         : ' + shopno + '<br>' +
+                 'Street/Village  : ' + street + '<br>' +
+                 'Landmark/PO     : ' + landmark + '<br>' +
+                 'Locality/Tehsil : ' + locality + '<br>' +
+                 'City/District   : ' + city + '<br>' +
+                 'State/UT        : ' + state + '<br>' +
+                 'PIN Code        : ' + pincode + '<br>' +
+                 '<br>' +
+                 'Avg. Activation PM : ' + activation + '<br>' +
+                 'Avg. MNP PM        : ' + mnp + '<br>' +
+                 'Avg. Recharge PM   : ' + recharge + '<br>' +
+                 '<br>' +
+                 'Visited By : ' + visitedby ; 
+         
+                 /* document.getElementById('div5').innerHTML = ''; 
+                  document.getElementById('imagea').src = ''; 
+                  document.getElementById('imageb').src = ''; */ 
+                 areaMap(latitude, longitude); 
+                 document.getElementById('imagea').src = imagea; 
+                 document.getElementById('imageb').src = imageb; 
+                 
+         alert(ctopno + ' ' + 'updated successfully'); 
+       };  
+       request.onerror = function(event) {
+          alert(ctopno + ' ' + 'already exist');
+       }; 
+      } else {} 
+    }
+    
+    function remove() { 
+      if (true) { 
+        previewready = false; 
+        cordsreadready = false; 
+        saveready = true; 
+        readready = false; 
+        removeready = true; 
+            var toremove = ctopno; 
+            /* var toremove = document.getElementById('ctopno').value; */ 
+            var request = db.transaction(['posbsnl'], 'readwrite')
+            .objectStore('posbsnl')
+            .delete(toremove);
+            
+            request.onsuccess = function(event) { 
+                 document.getElementById('p2').innerHTML ='';
+                 document.getElementById('p2').innerHTML =
+                 'Latitude  : ' + ' ' + '<br>' +
+                 'Longitude : ' + ' ' ; 
+                 document.getElementById('p3').innerHTML ='';
+                 document.getElementById('p3').innerHTML =
+                 'Franchise       : ' + ' ' + '<br>' +
+                 'FOS Name        : ' + ' ' + '<br>' + 
+                 '<br>' +
+                 'CTOPUP No       : ' + ' ' + '<br>' +
+                 'Alternate No    : ' + ' ' + '<br>' +
+                 'Email ID        : ' + ' ' + '<br>' +
+                 'POS Name        : ' + ' ' + '<br>' +
+                 'Gender          : ' + ' ' + '<br>' +
+                 'Shop Name       : ' + ' ' + '<br>' + 
+                 '<br>' +
+                 'Shop No         : ' + ' ' + '<br>' +
+                 'Street/Village  : ' + ' ' + '<br>' +
+                 'Landmark/PO     : ' + ' ' + '<br>' +
+                 'Locality/Tehsil : ' + ' ' + '<br>' +
+                 'City/District   : ' + ' ' + '<br>' +
+                 'State/UT        : ' + ' ' + '<br>' +
+                 'PIN Code        : ' + ' ' + '<br>' +
+                 '<br>' +
+                 'Avg. Activation PM : ' + ' ' + '<br>' +
+                 'Avg. MNP PM        : ' + ' ' + '<br>' +
+                 'Avg. Recharge PM   : ' + ' ' + '<br>' +
+                 '<br>' + 
+                 'Visited By : ' + ' ' ; 
+                 document.getElementById('div5').innerHTML = '';
+                 document.getElementById('imagea').src = ''; 
+                 document.getElementById('imageb').src = ''; 
+               alert(toremove + ' ' + 'has been removed successfully');
+            }; 
+            request.onerror = function(event) {
+               alert("Unable to remove!"); 
+            }; 
+      } else {}
+    } 
+    
+    function removeAll() {
+      
+    } 
+  
+  </script> 
+  
+  <script>
+    
+    function map() { 
+      if (togglemap) { 
+        togglemap = false; 
+        getLocation(); 
+        function getLocation() { 
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showLoc, errHand); 
+          } 
+        } 
+      } else if(!togglemap) { 
+        togglemap = true; 
+        document.getElementById('div5').innerHTML = ''; 
+      }
+    function showLoc(pos) {
+      var latt = pos.coords.latitude;
+      var long = pos.coords.longitude;
+      var lattlong = new google.maps.LatLng(latt, long);
+      var OPTions = {
+        center: lattlong,
+        zoom: 16,
+        mapTypeControl: true,
+        navigationControlOptions: {
+          style: google.maps.NavigationControlStyle.SMALL,
+        }, 
+      };
+      var mapg = new google.maps.Map(
+        document.getElementById('div5'),
+        OPTions 
+      );
+      var markerg = new google.maps.Marker({
+        position: lattlong,
+        map: mapg,
+        title: 'You are here!',
+      }); 
+    } 
+    function errHand(err) {
+      switch (err.code) {
+        case err.PERMISSION_DENIED:
+          document.getElementById('p1').innerHTML =
+            'The application does not have the permission ' +
+            'to make use of location services';
+          break;
+        case err.POSITION_UNAVAILABLE:
+          document.getElementById('p1').innerHTML = 
+          'The location of the device is uncertain';
+          break;
+        case err.TIMEOUT:
+          document.getElementById('p1').innerHTML = 
+          'The request to get user location timed out';
+          break;
+        case err.UNKNOWN_ERROR:
+          document.getElementById('p1').innerHTML =
+            'Time to fetch location information exceeded' +
+            'the maximum timeout interval';
+          break;
+      }
+     }
+    } 
+    
+    function areaMap(latitude, longitude) { 
+   showLoc(); 
+   function showLoc(pos) {
+      /* latt = pos.coords.latitude;
+       long = pos.coords.longitude; */ 
+      var latt = latitude; 
+      var long = longitude; 
+      var lattlong = new google.maps.LatLng(latt, long);
+      var OPTions = {
+        center: lattlong,
+        zoom: 16,
+        mapTypeControl: true,
+        navigationControlOptions: {
+          style: google.maps.NavigationControlStyle.SMALL,
+        }, 
+      };
+      var mapg = new google.maps.Map(
+        document.getElementById('div5'),
+        OPTions 
+      );
+      var markerg = new google.maps.Marker({
+        position: lattlong,
+        map: mapg,
+        title: 'You are here!',
+      }); 
+   } 
+}
+  
+function captureA() { 
+  document.getElementById('filea').click(); 
+  /* var ele = document.getElementById('filea'); 
+   ele.addEventListener('change', 'previewFileA'); */ 
+} 
+   
+function captureB() { 
+  document.getElementById('fileb').click(); 
+  /* var ele = document.getElementById('fileb'); 
+   ele.addEventListener('change', 'previewFileB'); */ 
+} 
+    
+function previewFileA() {
+  var preview = document.getElementById('imagea');
+  var file = document.getElementById('filea').files[0];
+  var reader = new FileReader();
+  reader.addEventListener("load", function () {
+    /* convert image file to base64 string */ 
+    preview.src = reader.result; 
+    imagea = reader.result; 
+  }, false);
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+} 
+    
+function previewFileB() {
+  var preview = document.querySelector('#imageb');
+  var file = document.querySelector('#fileb').files[0];
+  var reader = new FileReader();
+  reader.addEventListener("load", function () {
+    /* convert image file to base64 string */ 
+    preview.src = reader.result; 
+    imageb = reader.result; 
+  }, false);
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+} 
+  
+function removeA() { 
+  imagea = ''; 
+  document.getElementById('imagea').src = ''; 
+} 
+    
+function removeB() { 
+  imageb = ''; 
+  document.getElementById('imageb').src = ''; 
+}
+    
+</script> 
+  
+  <script> 
+                function getDateTime(h) { 
+                     var datetime; var date; var time;
+                     var today = new Date();
+                     var day   = today.getDate() < 10 ? '0' + today.getDate() : today.getDate() ; 
+                     var month = today.getMonth() < 9 ? '0' + (today.getMonth() + 1) : (today.getMonth() + 1) ;              
+                     var year   = today.getFullYear() < 10 ? '0' + today.getFullYear() : today.getFullYear() ;    
+                     var hours   = today.getHours() < 10 ? '0' + today.getHours() : today.getHours() ;
+                     var minutes   = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes() ;     
+                     var seconds   = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds() ; 
+                     var gmt = '+0530'
+                     if(h='12h') { 
+                     var part = hours < 12 ? 'AM' : 'PM' ;
+                     hours = hours % 12; 
+                     hours = hours ? hours : 12 ; hours = hours<10 ? '0'+hours : hours;
+                     date = day +'.'+ month +'.'+ year ;
+                     time = hours +':'+ minutes +' '+ part ; 
+                     datetime = date +' '+ time ; 
+                            /* if(sec) {   
+                                date = day +'.'+ month +'.'+ year ;
+                                time = hours +':'+ minutes +':'+ seconds +' '+ part  +' '+ gmt ;
+                                } */
+                      } else if (h=='24h') {
+                              date = day +'.'+ month +'.'+ year ;
+                              time = hours +':'+ minutes +':'+ seconds +' '+ gmt ; 
+                              datetime = date +' '+ time ; 
+                      } 
+                      var obj = { 
+                        date: date, 
+                        time: time, 
+                        datetime: datetime
+                      }; 
+                      return obj; 
+                 } 
+                 </script> 
+
+  
+  </body>
+</html>
 
