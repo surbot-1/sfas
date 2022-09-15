@@ -243,13 +243,13 @@
   
   <div class='div10' id='div10'>
   <div class='image10' id='div10a'>  
-    <input type='button' id='buttona' value='Capture' onclick='captureA()'> 
+    <input type='button' id='buttona' value='Image 1' onclick='imageA()'> 
     <input type='button' id='removea' value='Remove' onclick='removeA()'>
     <input type='file' id='filea' onchange='previewFileA()' style='display:none;'><br>
     <img id='imagea' src='' width='520'>
   </div> 
   <div class='image10' id='div10b'> 
-    <input type='button' id='buttonb' value='Capture' onclick='captureB()'> 
+    <input type='button' id='buttonb' value='Image 2' onclick='imageB()'> 
     <input type='button' id='removeb' value='Remove' onclick='removeB()'>
     <input type='file' id='fileb' onchange='previewFileB()' style='display:none;'><br>
     <img id='imageb' src='' width='520'>
@@ -431,11 +431,11 @@
     }
     
     function preview() { 
-        previewready = true; 
+       /* previewready = true; 
         cordsreadready = true; 
         saveready = true; 
         readready = false; 
-        removeready = false; 
+        removeready = false; */
       /* latitude;
        longitude; */ 
       franchise = document.getElementById('franchise').value; 
@@ -494,12 +494,12 @@
   <script>
     
     function save() { 
-      if (true) { 
-        previewready = false; 
+      // if (true) { 
+        /* previewready = false; 
         cordsreadready = false; 
         saveready = true; 
         readready = false; 
-        removeready = true; 
+        removeready = true; */
         time = getDateTime('12h').datetime; 
         var request = db.transaction(['posbsnl'], 'readwrite')
        .objectStore('posbsnl')
@@ -574,16 +574,16 @@
        request.onerror = function(event) {
           alert(ctopno + ' ' + 'already exist');
        }; 
-      } else {} 
+     // } else {} 
     }
     
     function read() { 
-      if (true) { 
-        previewready = false; 
+      // if (true) { 
+        /* previewready = false; 
         cordsreadready = false; 
         saveready = false; 
         readready = true; 
-        removeready = true; 
+        removeready = true; */
         
         var request; 
         var toread = document.getElementById('ctopno').value; 
@@ -665,12 +665,12 @@
         request.onerror = function(event) {
                alert('Unable to retrieve!');
             }; 
-      } else {} 
+      // } else {} 
     } 
     
     function readAll() { 
-        if (togglereadall) { 
-            togglereadall = false; 
+         if (togglereadall) { 
+            togglereadall = false; */
             document.getElementById('p6').innerHTML =''; 
             document.getElementById('p6').innerHTML += 
             'All POS(Point Of Sale)' + '<br>';
@@ -825,12 +825,12 @@
   <script>
     
     function update() {
-      if (true) { 
-        previewready = false; 
+      // if (true) { 
+        /* previewready = false; 
         cordsreadready = false; 
         saveready = true; 
         readready = false; 
-        removeready = true; 
+        removeready = true; */
         time = getDateTime('12h').datetime; 
         var request = db.transaction(['posbsnl'], 'readwrite')
        .objectStore('posbsnl')
@@ -905,16 +905,16 @@
        request.onerror = function(event) {
           alert(ctopno + ' ' + 'already exist');
        }; 
-      } else {} 
+      // } else {} 
     }
     
     function remove() { 
-      if (true) { 
-        previewready = false; 
+      // if (true) { 
+       /* previewready = false; 
         cordsreadready = false; 
         saveready = true; 
         readready = false; 
-        removeready = true; 
+        removeready = true; */
             var toremove = ctopno; 
             /* var toremove = document.getElementById('ctopno').value; */ 
             var request = db.transaction(['posbsnl'], 'readwrite')
@@ -959,7 +959,7 @@
             request.onerror = function(event) {
                alert("Unable to remove!"); 
             }; 
-      } else {}
+      // } else {}
     } 
     
     function removeAll() {
@@ -1057,13 +1057,13 @@
    } 
 }
   
-function captureA() { 
+function imageA() { 
   document.getElementById('filea').click(); 
   /* var ele = document.getElementById('filea'); 
    ele.addEventListener('change', 'previewFileA'); */ 
 } 
    
-function captureB() { 
+function imageB() { 
   document.getElementById('fileb').click(); 
   /* var ele = document.getElementById('fileb'); 
    ele.addEventListener('change', 'previewFileB'); */ 
