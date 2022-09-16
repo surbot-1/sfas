@@ -1207,7 +1207,7 @@ function download() {
                  'Remark : ' + remark + '\n' +
                  'Time : ' + time;  
   var c = document.createElement('a');
-  c.download = 'user-text.txt';
+  c.download = ctopno + '.txt';
 
   var t = new Blob([data], {
   type: 'text/plain'
