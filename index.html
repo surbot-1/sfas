@@ -1176,13 +1176,41 @@ function back() {
   
 <script>  
   
-function save() {
-  var data = document.getElementById("txtData").value;
-  var c = document.createElement("a");
-  c.download = "user-text.txt";
+function download() {
+  // var data = document.getElementById('imagea').value;
+  var data =     'Franchise       : ' + franchise + '<br>' +
+                 'FOS & SAN       : ' + fosname + '<br>' + 
+                 '<br>' +
+                 'CTOPUP No       : ' + ctopno + '<br>' +
+                 'Alternate No    : ' + altno + '<br>' +
+                 'Email ID        : ' + emailid + '<br>' +
+                 'POS Name        : ' + posname + '<br>' +
+                 'Gender          : ' + posgend + '<br>' +
+                 'Shop Name       : ' + shopname + '<br>' + 
+                 '<br>' +
+                 'Shop No         : ' + shopno + '<br>' +
+                 'Street/Village  : ' + street + '<br>' +
+                 'Landmark/PO     : ' + landmark + '<br>' +
+                 'Locality/Tehsil : ' + locality + '<br>' +
+                 'City/District   : ' + city + '<br>' +
+                 'State/UT        : ' + state + '<br>' +
+                 'PIN Code        : ' + pincode + '<br>' +
+                 '<br>' +
+                 'Avg. Activation PM : ' + activation + '<br>' +
+                 'Avg. MNP PM        : ' + mnp + '<br>' +
+                 'Avg. Recharge PM   : ' + recharge + '<br>' +
+                 '<br>' +
+                 'Visited By : ' + visitedby + '\n' + 
+                 'Area Map : ' + areamap + '\n' +
+                 'Image 1 : ' + imagea + '\n' +
+                 'Image 2 : ' + imageb + '\n' +
+                 'Remark : ' + remark + '\n' +
+                 'Time : ' + time;  
+  var c = document.createElement('a');
+  c.download = 'user-text.txt';
 
   var t = new Blob([data], {
-  type: "text/plain"
+  type: 'text/plain'
   });
   c.href = window.URL.createObjectURL(t);
   c.click();
