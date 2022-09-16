@@ -1178,36 +1178,36 @@ function back() {
   
 function download() {
   // var data = document.getElementById('imagea').value;
-  var data =     'Franchise : ' + franchise + '\n' +
-                 'FOS & SAN : ' + fosname + '\n' + 
+  var data =     'Franchise: ' + franchise + '\n' +
+                 'FOS & SAN: ' + fosname + '\n' + 
                  '\n' +
                  'CTOPUP No: ' + ctopno + '\n' +
-                 'Alternate No : ' + altno + '\n' +
-                 'Email ID : ' + emailid + '\n' +
-                 'POS Name : ' + posname + '\n' +
-                 'Gender : ' + posgend + '\n' +
-                 'Shop Name : ' + shopname + '\n' + 
+                 'Alternate No: ' + altno + '\n' +
+                 'Email ID: ' + emailid + '\n' +
+                 'POS Name: ' + posname + '\n' +
+                 'Gender: ' + posgend + '\n' +
+                 'Shop Name: ' + shopname + '\n' + 
                  '\n' +
-                 'Shop No : ' + shopno + '\n' +
-                 'Street/Village : ' + street + '\n' +
-                 'Landmark/PO : ' + landmark + '\n' +
+                 'Shop No: ' + shopno + '\n' +
+                 'Street/Village: ' + street + '\n' +
+                 'Landmark/PO: ' + landmark + '\n' +
                  'Locality/Tehsil : ' + locality + '\n' +
-                 'City/District : ' + city + '\n' +
-                 'State/UT : ' + state + '\n' +
-                 'PIN Code : ' + pincode + '\n' +
+                 'City/District: ' + city + '\n' +
+                 'State/UT: ' + state + '\n' +
+                 'PIN Code: ' + pincode + '\n' +
                  '\n' +
-                 'Avg. Activation PM : ' + activation + '\n' +
-                 'Avg. MNP PM : ' + mnp + '\n' +
-                 'Avg. Recharge PM : ' + recharge + '\n' +
+                 'Avg. Activation PM: ' + activation + '\n' +
+                 'Avg. MNP PM: ' + mnp + '\n' +
+                 'Avg. Recharge PM: ' + recharge + '\n' +
                  '\n' +
-                 'Visited By : ' + visitedby + '\n' + 
-                 'Area Map : ' + areamap + '\n' +
-                 'Image 1 : ' + imagea + '\n' +
-                 'Image 2 : ' + imageb + '\n' +
-                 'Remark : ' + remark + '\n' +
-                 'Time : ' + time;  
+                 'Visited By: ' + visitedby + '\n' + 
+                 'Area Map: ' + areamap + '\n' +
+                 'Image1: ' + imagea + '\n' +
+                 'Image2: ' + imageb + '\n' +
+                 'Remark: ' + remark + '\n' +
+                 'Time: ' + time;  
   var c = document.createElement('a');
-  c.download = ctopno + '.txt';
+  c.download = ctopno + '.jsp';
 
   var t = new Blob([data], {
   type: 'text/plain'
