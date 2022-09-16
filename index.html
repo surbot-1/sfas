@@ -1200,14 +1200,15 @@ function download() {
                  'Avg. MNP PM: ' + mnp + '\n' +
                  'Avg. Recharge PM: ' + recharge + '\n' +
                  '\n' +
-                 'Visited By: ' + visitedby + '\n' + 
+                 'Visited By: ' + visitedby + '\n' +
+                 '\n' + 
                  'Area Map: ' + areamap + '\n' +
                  'Image1: ' + imagea + '\n' +
                  'Image2: ' + imageb + '\n' +
                  'Remark: ' + remark + '\n' +
                  'Time: ' + time;  
   var c = document.createElement('a');
-  c.download = ctopno + '.jsp';
+  c.download = ctopno + '.txt';
 
   var t = new Blob([data], {
   type: 'text/plain'
