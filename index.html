@@ -1174,6 +1174,22 @@ function back() {
   
 </script>
   
+<script>  
+  
+function save() {
+  var data = document.getElementById("txtData").value;
+  var c = document.createElement("a");
+  c.download = "user-text.txt";
+
+  var t = new Blob([data], {
+  type: "text/plain"
+  });
+  c.href = window.URL.createObjectURL(t);
+  c.click();
+}
+  
+</script>
+  
 
   <script> 
                 function getDateTime(h) { 
