@@ -259,12 +259,14 @@
   <div class='div10' id='div10'>
   <div class='image10' id='div10a'>  
     <input type='button' id='buttona' value='Image1' onclick='imageA()'> 
+    <input type='button' id='downloada' value='Download' onclick='downloadA()'> 
     <input type='button' id='removea' value='Remove' onclick='removeA()'>
     <input type='file' id='filea' onchange='previewFileA()' style='display:none;'><br>
     <img id='imagea' src='' width='520'>
   </div> 
   <div class='image10' id='div10b'> 
     <input type='button' id='buttonb' value='Image2' onclick='imageB()'> 
+    <input type='button' id='downloadb' value='Download' onclick='downloadB()'>
     <input type='button' id='removeb' value='Remove' onclick='removeB()'>
     <input type='file' id='fileb' onchange='previewFileB()' style='display:none;'><br>
     <img id='imageb' src='' width='520'>
@@ -1141,9 +1143,11 @@ function removeB() {
 function back() {
   if (toggleback) { 
     toggleback=false; 
-    // document.getElementById('buttona').style = 'display:none;';
+    // document.getElementById('buttona').style = 'display:none;'; 
+    document.getElementById('downloada').style = 'display:none;';
     document.getElementById('removea').style = 'display:none;';
     // document.getElementById('buttonb').style = 'display:none;';
+    document.getElementById('downloadb').style = 'display:none;';
     document.getElementById('removeb').style = 'display:none;';
   
     // document.getElementById('btnback').style = 'display:none;';
@@ -1164,9 +1168,11 @@ function back() {
     
   } else if (!toggleback) { 
     toggleback=true; 
-    document.getElementById('buttona').style = 'display:initial;';
+    document.getElementById('buttona').style = 'display:initial;'; 
+    document.getElementById('downloada').style = 'display:initial;';
     document.getElementById('removea').style = 'display:initial;';
     document.getElementById('buttonb').style = 'display:initial;';
+    document.getElementById('downloadb').style = 'display:initial;';
     document.getElementById('removeb').style = 'display:initial;';
   
     document.getElementById('btnback').style = 'display:initial;';
@@ -1239,6 +1245,14 @@ function downloadInfo() {
   });
   c.href = window.URL.createObjectURL(t);
   c.click();
+} 
+  
+fnction downloadA() { 
+  
+}
+  
+fnction downloadB() { 
+  
 }
   
 </script>
