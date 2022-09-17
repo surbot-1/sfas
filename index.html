@@ -1094,10 +1094,9 @@ function newInfo() {
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','filei'); 
-  ele.setAttribute('onchange','readInfo()'); 
   // ele.setAttribute('style','display:none'); 
   ele.click(); 
-  // ele.addEventListener('change', 'readInfo');
+  ele.addEventListener('change', 'readInfo');
 } 
   
 function writeInfo() { alert('2'); 
@@ -1132,7 +1131,7 @@ function writeInfo() { alert('2');
          'Visited By      : ' + visitedby ; 
 } 
   
-function readInfo() {
+function readInfo() { alert('1'); 
   var file = document.getElementById('filei').files[0];
   var reader = new FileReader();
   reader.addEventListener('load', function () {
