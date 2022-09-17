@@ -182,7 +182,7 @@
   <button class='button2' id='btnautofill' onclick='autofill()'>
     Autofill
   </button> 
-  <button class='button2' id='btndownloadInfo' onclick='downloadInfo()'>
+  <button class='button2' id='btndownload' onclick='download()'>
     Download
   </button> 
   <button class='button2' id='btnread' onclick='read()'>
@@ -1156,7 +1156,7 @@ function back() {
     document.getElementById('btnrefresh').style = 'display:none;';
     document.getElementById('btnedit').style = 'display:none;';
     document.getElementById('btnautofill').style = 'display:none;';
-    document.getElementById('btndownloadInfo').style = 'display:none;';
+    document.getElementById('btndownload').style = 'display:none;';
     // document.getElementById('btnread').style = 'display:none;';
     document.getElementById('btnreadAll').style = 'display:none;';
     document.getElementById('btnupdate').style = 'display:none;';
@@ -1181,7 +1181,7 @@ function back() {
     document.getElementById('btnrefresh').style = 'display:initial;';
     document.getElementById('btnedit').style = 'display:initial;';
     document.getElementById('btnautofill').style = 'display:initial;';
-    document.getElementById('btndownloadInfo').style = 'display:initial;';
+    document.getElementById('btndownload').style = 'display:initial;';
     document.getElementById('btnread').style = 'display:initial;';
     document.getElementById('btnreadAll').style = 'display:initial;';
     document.getElementById('btnupdate').style = 'display:initial;';
@@ -1202,7 +1202,7 @@ function back() {
   
 <script>  
   
-function downloadInfo() { alert('1'); 
+function download() { alert('1'); 
   // var data = document.getElementById('imagea').value;
   var data =     'CTOPUP No: ' + ctopno + '\n' +
                  'Alternate No: ' + altno + '\n' +
