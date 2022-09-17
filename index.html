@@ -173,7 +173,7 @@
   <button class='button2' id='btnmap'  onclick='map()'>
     Map
   </button> 
-  <button class='button2' id='btnrefresh' onclick='refresh()'>
+  <button class='button2' id='btnnew' onclick='newInfo()'>
     New
   </button> 
   <button class='button2' id='btnedit' onclick='edit()'>
@@ -1086,17 +1086,13 @@
    showLoc(); 
 }
   
-function imageA() { 
-  document.getElementById('filea').click(); 
-  /* var ele = document.getElementById('filea'); 
-   ele.addEventListener('change', 'previewFileA'); */ 
-} 
-   
-function imageB() { 
-  document.getElementById('fileb').click(); 
-  /* var ele = document.getElementById('fileb'); 
-   ele.addEventListener('change', 'previewFileB'); */ 
-} 
+</script> 
+  
+<script>
+  
+function newInfo() {
+  
+}
     
 function previewFileA() {
   var preview = document.getElementById('imagea');
@@ -1153,7 +1149,7 @@ function back() {
     // document.getElementById('btnback').style = 'display:none;';
     document.getElementById('btngetCoordinates').style = 'display:none;';
     document.getElementById('btnmap').style = 'display:none;';
-    document.getElementById('btnrefresh').style = 'display:none;';
+    document.getElementById('btnnew').style = 'display:none;';
     document.getElementById('btnedit').style = 'display:none;';
     document.getElementById('btnautofill').style = 'display:none;';
     document.getElementById('btndownload').style = 'display:none;';
@@ -1178,7 +1174,7 @@ function back() {
     document.getElementById('btnback').style = 'display:initial;';
     document.getElementById('btngetCoordinates').style = 'display:initial;';
     document.getElementById('btnmap').style = 'display:initial;';
-    document.getElementById('btnrefresh').style = 'display:initial;';
+    document.getElementById('btnnew').style = 'display:initial;';
     document.getElementById('btnedit').style = 'display:initial;';
     document.getElementById('btnautofill').style = 'display:initial;';
     document.getElementById('btndownload').style = 'display:initial;';
