@@ -182,7 +182,7 @@
   <button class='button2' id='btnautofill' onclick='autofill()'>
     Autofill
   </button> 
-  <button class='button2' id='btndownload' onclick='download()'>
+  <button class='button2' id='btndownloadInfo' onclick='downloadInfo()'>
     Download
   </button> 
   <button class='button2' id='btnread' onclick='read()'>
@@ -1152,7 +1152,7 @@ function back() {
     document.getElementById('btnrefresh').style = 'display:none;';
     document.getElementById('btnedit').style = 'display:none;';
     document.getElementById('btnautofill').style = 'display:none;';
-    document.getElementById('btndownload').style = 'display:none;';
+    document.getElementById('btndownloadInfo').style = 'display:none;';
     // document.getElementById('btnread').style = 'display:none;';
     document.getElementById('btnreadAll').style = 'display:none;';
     document.getElementById('btnupdate').style = 'display:none;';
@@ -1175,7 +1175,7 @@ function back() {
     document.getElementById('btnrefresh').style = 'display:initial;';
     document.getElementById('btnedit').style = 'display:initial;';
     document.getElementById('btnautofill').style = 'display:initial;';
-    document.getElementById('btndownload').style = 'display:initial;';
+    document.getElementById('btndownloadInfo').style = 'display:initial;';
     document.getElementById('btnread').style = 'display:initial;';
     document.getElementById('btnreadAll').style = 'display:initial;';
     document.getElementById('btnupdate').style = 'display:initial;';
@@ -1196,7 +1196,7 @@ function back() {
   
 <script>  
   
-function download() {
+function downloadInfo() {
   // var data = document.getElementById('imagea').value;
   var data =     'Latitude: ' + latitude + '\n' +
                  'Longitude: ' + longitude + '\n' +
@@ -1223,15 +1223,15 @@ function download() {
                  'Avg. MNP PM: ' + mnp + '\n' +
                  'Avg. Recharge PM: ' + recharge + '\n' +
                  '\n' +
-                 'Visited By: ' + visitedby + '\n' +
-                 '\n' + 
+                 'Visited By: ' + visitedby ; // + '\n' +
+                 /* '\n' + 
                  'Area Map: ' + areamap + '\n' +
                  'Image1: ' + imagea + '\n' +
                  'Image2: ' + imageb + '\n' +
                  'Remark: ' + remark + '\n' +
-                 'Time: ' + time;  
+                 'Time: ' + time;  */ 
   var c = document.createElement('a');
-  c.download = ctopno + '.txt';
+  c.download = ctopno + '_info' + '.txt';
 
   var t = new Blob([data], {
   type: 'text/plain'
