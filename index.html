@@ -1090,15 +1090,6 @@
   
 <script>
   
-function newInfo1() { 
-  var ele = document.createElement('input'); 
-  ele.setAttribute('type','file'); 
-  ele.setAttribute('id','filei'); 
-  // ele.setAttribute('style','display:none'); 
-  ele.click(); 
-  ele.addEventListener('change', 'readInfo');
-} 
-  
 function writeInfo() { alert('2'); 
     document.getElementById('p2').innerHTML ='';
     document.getElementById('p2').innerHTML =
@@ -1132,8 +1123,8 @@ function writeInfo() { alert('2');
 } 
   
 function newInfo() { 
-  alert('1'); 
-  var ele = document.createElement('input'); 
+  alert('1'); writeInfo(); 
+  /* var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','filei'); 
   // ele.setAttribute('style','display:none'); 
@@ -1148,7 +1139,7 @@ function newInfo() {
      if (file) {
      reader.readAsText(file);
      } 
-  }
+  } */ 
 }
   
 
