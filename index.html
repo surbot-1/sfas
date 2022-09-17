@@ -1090,6 +1090,16 @@
   
 <script>
   
+function newInfo() { 
+  var ele = document.createElement('input'); 
+  ele.setAttribute('type','file'); 
+  ele.setAttribute('id','filei'); 
+  ele.setAttribute('onchange','readInfo'); 
+  ele.setAttribute('style','display:none'); 
+  ele.click(); 
+  // ele.addEventListener('change', 'readInfo');
+} 
+  
 function writeInfo() { alert('2'); 
     document.getElementById('p2').innerHTML ='';
     document.getElementById('p2').innerHTML =
@@ -1134,15 +1144,7 @@ function readInfo() {
   } 
 }
   
-function newInfo() { 
-  var ele = document.createElement('input'); 
-  ele.setAttribute('type','file'); 
-  ele.setAttribute('id','filei'); 
-  ele.setAttribute('style','display:none'); 
-  ele.click(); 
-  ele.addEventListener('change', 'readInfo');
-} 
-  
+
 function imageA() { 
   document.getElementById('filea').click(); 
   /* var ele = document.getElementById('filea'); 
