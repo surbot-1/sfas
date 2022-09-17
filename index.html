@@ -1254,7 +1254,7 @@ function downloadA() {
     xhr.onload = function () {
         let a = document.createElement('a');
         a.href = window.URL.createObjectURL(xhr.response);
-        a.download = ctopno + '_image1' + '.png';
+        a.download = ctopno + '_image1' + '.jpg';
         a.style.display = 'none';
         document.body.appendChild(a);
         a.click();
@@ -1272,7 +1272,7 @@ function downloadB() {
     xhr.onload = function () {
         let a = document.createElement('a');
         a.href = window.URL.createObjectURL(xhr.response);
-        a.download = ctopno + '_image2' + '.png';
+        a.download = ctopno + '_image2' + '.jpg';
         a.style.display = 'none';
         document.body.appendChild(a);
         a.click();
