@@ -1090,7 +1090,7 @@
   
 <script>
   
-function writeInfo() { 
+function writeInfo() { alert('2'); 
     document.getElementById('p2').innerHTML ='';
     document.getElementById('p2').innerHTML =
         'Latitude  : ' + latitude + '<br>' +
@@ -1122,7 +1122,7 @@ function writeInfo() {
          'Visited By      : ' + visitedby ; 
 }
   
-function newInfo() { 
+function newInfo() { alert('1');
   var info; 
   var file = document.getElementById('btnnew').files[0];
   var reader = new FileReader();
