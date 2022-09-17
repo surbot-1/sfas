@@ -218,9 +218,6 @@
   </p>
     
   <p class='p3' id='p3'>
-    <input type='text' class='input' id='franchise' placeholder='Franchise Name and Code'> Franchise Name and Code <br>
-    <input type='text' class='input' id='fosname' placeholder='FOS Name and SAN'> FOS Name and SAN <br>
-    <br>
     <input type='text' class='input' id='ctopno' placeholder='CTOPUP No.'> CTOPUP No. <br>
     <input type='text' class='input' id='altno' placeholder='Alternate No.'> Alternate No. <br>
     <input type='text' class='input' id='emailid' placeholder='Email ID'> Email ID <br>
@@ -239,6 +236,9 @@
     <input type='text' class='input' id='activation' placeholder='Avg. Activation PM'> Avg. Activation PM <br>
     <input type='text' class='input' id='mnp' placeholder='Avg. MNP PM'> Avg. MNP PM <br>
     <input type='text' class='input' id='recharge' placeholder='Avg. Recharge PM'> Avg. Recharge PM <br> 
+    <br> 
+    <input type='text' class='input' id='franchise' placeholder='Franchise Name and Code'> Franchise Name and Code <br>
+    <input type='text' class='input' id='fosname' placeholder='FOS Name and SAN'> FOS Name and SAN <br>
     <br> 
     <input type='text' class='input' id='visitedby' placeholder='Visited By'> Visited By
     <!-- <input type='button' class='input' id='preview' value='Preview' onclick='preview()' style='margin-left:80px;'> -->
@@ -324,8 +324,6 @@
     
     var latitude = 0; 
     var longitude= 0; 
-    var franchise=''; 
-    var fosname=''; 
     var ctopno=''; 
     var altno=''; 
     var emailid=''; 
@@ -342,6 +340,8 @@
     var activation=''; 
     var mnp=''; 
     var recharge=''; 
+    var franchise; 
+    var fosname; 
     var visitedby=''; 
     var areamap=''; 
     var imagea=''; 
@@ -422,8 +422,6 @@
     function autofill() {
       /* latitude;
        longitude; */ 
-      document.getElementById('franchise').value = 'OPKN Sangrur'; 
-      document.getElementById('fosname').value = 'Jaggi 9417001119'; 
       /* document.getElementById('ctopno').value = ''; 
        document.getElementById('altno').value = ''; 
        document.getElementById('emailid').value = ''; 
@@ -440,6 +438,8 @@
       /* document.getElementById('activation').value = ''; 
        document.getElementById('mnp').value = ''; 
        document.getElementById('recharge').value = ''; */
+      document.getElementById('franchise').value = 'OPKN Sangrur'; 
+      document.getElementById('fosname').value = 'Jaggi 9417001119'; 
       document.getElementById('visitedby').value = 'J S Patel JE(S&M) Sangrur'; 
     }
     
@@ -455,8 +455,6 @@
         removeready = false; */
       /* latitude;
        longitude; */ 
-      franchise = document.getElementById('franchise').value; 
-      fosname = document.getElementById('fosname').value; 
       ctopno = document.getElementById('ctopno').value; 
       altno = document.getElementById('altno').value; 
       emailid = document.getElementById('emailid').value; 
@@ -473,6 +471,8 @@
       activation = document.getElementById('activation').value; 
       mnp = document.getElementById('mnp').value; 
       recharge = document.getElementById('recharge').value; 
+      franchise = document.getElementById('franchise').value; 
+      fosname = document.getElementById('fosname').value; 
       visitedby = document.getElementById('visitedby').value; 
       
       document.getElementById('p2').innerHTML ='';
@@ -481,9 +481,6 @@
         'Longitude       : ' + longitude ; 
       document.getElementById('p3').innerHTML ='';
       document.getElementById('p3').innerHTML = 
-        'Franchise       : ' + franchise + '<br>' +
-        'FOS & SAN       : ' + fosname + '<br>' + 
-        '<br>' +
         'CTOPUP No       : ' + ctopno + '<br>' +
         'Alternate No    : ' + altno + '<br>' +
         'Email ID        : ' + emailid + '<br>' +
@@ -502,7 +499,10 @@
         'Avg. Activation PM : ' + activation + '<br>' +
         'Avg. MNP PM        : ' + mnp + '<br>' +
         'Avg. Recharge PM   : ' + recharge + '<br>' +
-        '<br>' +
+        '<br>' + 
+        'Franchise       : ' + franchise + '<br>' +
+        'FOS & SAN       : ' + fosname + '<br>' + 
+        '<br>' + 
         'Visited By : ' + visitedby ; 
     } 
   
@@ -524,8 +524,6 @@
        .add({ 
            latitude: latitude, 
            longitude: longitude, 
-           franchise: franchise, 
-           fosname: fosname, 
            ctopno: ctopno, 
            altno: altno, 
            emailid: emailid, 
@@ -542,6 +540,8 @@
            activation: activation, 
            mnp: mnp, 
            recharge: recharge, 
+           franchise: franchise, 
+           fosname: fosname, 
            visitedby: visitedby, 
            areamap: areamap, 
            imagea: imagea, 
@@ -555,10 +555,7 @@
                  'Latitude  : ' + latitude + '<br>' +
                  'Longitude : ' + longitude ; 
               document.getElementById('p3').innerHTML ='';
-              document.getElementById('p3').innerHTML =
-                 'Franchise       : ' + franchise + '<br>' +
-                 'FOS Name        : ' + fosname + '<br>' + 
-                 '<br>' +
+              document.getElementById('p3').innerHTML = 
                  'CTOPUP No       : ' + ctopno + '<br>' +
                  'Alternate No    : ' + altno + '<br>' +
                  'Email ID        : ' + emailid + '<br>' +
@@ -577,6 +574,9 @@
                  'Avg. Activation PM : ' + activation + '<br>' +
                  'Avg. MNP PM        : ' + mnp + '<br>' +
                  'Avg. Recharge PM   : ' + recharge + '<br>' +
+                 '<br>' + 
+                 'Franchise       : ' + franchise + '<br>' +
+                 'FOS Name        : ' + fosname + '<br>' + 
                  '<br>' +
                  'Visited By : ' + visitedby ; 
          
@@ -621,8 +621,6 @@
                if(request.result) { 
                   latitude = request.result.latitude; 
                   longitude = request.result.longitude; 
-                  franchise = request.result.franchise; 
-                  fosname = request.result.fosname; 
                   ctopno = request.result.ctopno;  
                   altno = request.result.altno;  
                   emailid = request.result.emailid; 
@@ -639,6 +637,8 @@
                   activation = request.result.activation;  
                   mnp = request.result.mnp;  
                   recharge = request.result.recharge;  
+                  franchise = request.result.franchise; 
+                  fosname = request.result.fosname; 
                   visitedby = request.result.visitedby; 
                   areamap = request.result.areamap;  
                   imagea = request.result.imagea; 
@@ -648,10 +648,7 @@
                  'Latitude  : ' + latitude + '<br>' +
                  'Longitude : ' + longitude ; 
                  document.getElementById('p3').innerHTML ='';
-                 document.getElementById('p3').innerHTML =
-                 'Franchise       : ' + franchise + '<br>' +
-                 'FOS & SAN       : ' + fosname + '<br>' + 
-                 '<br>' +
+                 document.getElementById('p3').innerHTML = 
                  'CTOPUP No       : ' + ctopno + '<br>' +
                  'Alternate No    : ' + altno + '<br>' +
                  'Email ID        : ' + emailid + '<br>' +
@@ -670,6 +667,9 @@
                  'Avg. Activation PM : ' + activation + '<br>' +
                  'Avg. MNP PM        : ' + mnp + '<br>' +
                  'Avg. Recharge PM   : ' + recharge + '<br>' +
+                 '<br>' + 
+                 'Franchise       : ' + franchise + '<br>' +
+                 'FOS & SAN       : ' + fosname + '<br>' + 
                  '<br>' +
                  'Visited By : ' + visitedby ; 
                  areaMap(latitude, longitude); 
@@ -708,9 +708,7 @@
               
                if (cursor) { 
                   /* var latitude = cursor.value.latitude; 
-                   var longitude = cursor.value.longitude; 
-                   var franchise = cursor.value.franchise; 
-                   var fosname = cursor.value.fosname; */ 
+                   var longitude = cursor.value.longitude; */ 
                   var ctopno = cursor.key;  
                   /* var altno = cursor.value.altno; */ 
                   /* var emailid = cursor.value.emailid; 
@@ -727,6 +725,8 @@
                    var activation = cursor.value.activation;  
                    var mnp = cursor.value.mnp;  
                    var recharge = cursor.value.recharge;  
+                   var franchise = cursor.value.franchise; 
+                   var fosname = cursor.value.fosname; 
                    var visitedby = cursor.value.visitedby; 
                    var areamap = cursor.value.areamap;  
                    var imagea = cursor.value.imagea;  
@@ -736,9 +736,6 @@
                   'Latitude  : ' + latitude + '<br>' +
                   'Longitude : ' + longitude + '<br>' + 
                   '<br>' + 
-                  'Franchise       : ' + franchise + '<br>' +
-                  'FOS & SAN       : ' + fosname + '<br>' + 
-                  '<br>' +
                   'CTOPUP No       : ' + ctopno + '<br>' +
                   'Alternate No    : ' + altno + '<br>' +
                   'Email ID        : ' + emailid + '<br>' +
@@ -757,7 +754,10 @@
                   'Avg. Activation PM : ' + activation + '<br>' +
                   'Avg. MNP PM        : ' + mnp + '<br>' +
                   'Avg. Recharge PM   : ' + recharge + '<br>' +
-                  '<br>' +
+                  '<br>' + 
+                  'Franchise       : ' + franchise + '<br>' +
+                  'FOS & SAN       : ' + fosname + '<br>' + 
+                  '<br>' + 
                   'Visited By : ' + visitedby + '<br>' +
                   '<br>' + 
                   '<br>' ; */ 
@@ -790,9 +790,6 @@
       document.getElementById('p3').innerHTML = ''; 
       var doc1 = document.getElementById('p3'); 
       var child1 = 
-    "<input type='text' class='input' id='franchise' placeholder='Franchise Name and Code'> Franchise Name and Code <br>" + 
-    "<input type='text' class='input' id='fosname' placeholder='FOS Name and SAN'> FOS Name and SAN <br>" +                         
-    "<br>" + 
     "<input type='text' class='input' id='ctopno' placeholder='CTOPUP No.'> CTOPUP No. <br>" + 
     "<input type='text' class='input' id='altno' placeholder='Alternate No.'> Alternate No. <br>" + 
     "<input type='text' class='input' id='emailid' placeholder='Email ID'> Email ID <br>" + 
@@ -811,7 +808,10 @@
     "<input type='text' class='input' id='activation' placeholder='Avg. Activation PM'> Avg. Activation PM <br>" + 
     "<input type='text' class='input' id='mnp' placeholder='Avg. MNP PM'> Avg. MNP PM <br>" + 
     "<input type='text' class='input' id='recharge' placeholder='Avg. Recharge PM'> Avg. Recharge PM <br>" + 
-    "<br>" +
+    "<br>" + 
+    "<input type='text' class='input' id='franchise' placeholder='Franchise Name and Code'> Franchise Name and Code <br>" + 
+    "<input type='text' class='input' id='fosname' placeholder='FOS Name and SAN'> FOS Name and SAN <br>" +                         
+    "<br>" + 
     "<input type='text' class='input' id='visitedby' placeholder='Visited By'> Visited By" + 
     // "<input type='button' class='input' id='preview' value='Preview' onclick='preview()' style='margin-left:80px;'>" + 
     "</p>" ;
@@ -820,9 +820,7 @@
       document.getElementById('p2').innerHTML = 
         'Latitude :' + latitude + 
         '<br>' +
-        'Longitude :' + longitude;
-      document.getElementById('franchise').value = franchise; 
-      document.getElementById('fosname').value = fosname; 
+        'Longitude :' + longitude; 
       document.getElementById('ctopno').value = ctopno; 
       document.getElementById('altno').value = altno; 
       document.getElementById('emailid').value = emailid; 
@@ -839,6 +837,8 @@
       document.getElementById('activation').value = activation; 
       document.getElementById('mnp').value = mnp; 
       document.getElementById('recharge').value = recharge; 
+      document.getElementById('franchise').value = franchise; 
+      document.getElementById('fosname').value = fosname; 
       document.getElementById('visitedby').value = visitedby; 
       areaMap(latitude, longitude); 
       document.getElementById('imagea').src = imagea; 
@@ -863,8 +863,6 @@
        .put({ 
            latitude: latitude, 
            longitude: longitude, 
-           franchise: franchise, 
-           fosname: fosname, 
            ctopno: ctopno, 
            altno: altno, 
            emailid: emailid, 
@@ -881,6 +879,8 @@
            activation: activation, 
            mnp: mnp, 
            recharge: recharge, 
+           franchise: franchise, 
+           fosname: fosname, 
            visitedby: visitedby, 
            areamap: areamap, 
            imagea: imagea, 
@@ -894,10 +894,7 @@
                  'Latitude  : ' + latitude + '<br>' +
                  'Longitude : ' + longitude ; 
               document.getElementById('p3').innerHTML ='';
-              document.getElementById('p3').innerHTML =
-                 'Franchise       : ' + franchise + '<br>' +
-                 'FOS & SAN       : ' + fosname + '<br>' + 
-                 '<br>' +
+              document.getElementById('p3').innerHTML = 
                  'CTOPUP No       : ' + ctopno + '<br>' +
                  'Alternate No    : ' + altno + '<br>' +
                  'Email ID        : ' + emailid + '<br>' +
@@ -916,6 +913,9 @@
                  'Avg. Activation PM : ' + activation + '<br>' +
                  'Avg. MNP PM        : ' + mnp + '<br>' +
                  'Avg. Recharge PM   : ' + recharge + '<br>' +
+                 '<br>' + 
+                 'Franchise       : ' + franchise + '<br>' +
+                 'FOS & SAN       : ' + fosname + '<br>' + 
                  '<br>' +
                  'Visited By : ' + visitedby ; 
          
@@ -953,10 +953,7 @@
                  'Latitude  : ' + ' ' + '<br>' +
                  'Longitude : ' + ' ' ; 
                  document.getElementById('p3').innerHTML ='';
-                 document.getElementById('p3').innerHTML =
-                 'Franchise       : ' + ' ' + '<br>' +
-                 'FOS & SAN       : ' + ' ' + '<br>' + 
-                 '<br>' +
+                 document.getElementById('p3').innerHTML = 
                  'CTOPUP No       : ' + ' ' + '<br>' +
                  'Alternate No    : ' + ' ' + '<br>' +
                  'Email ID        : ' + ' ' + '<br>' +
@@ -976,6 +973,9 @@
                  'Avg. MNP PM        : ' + ' ' + '<br>' +
                  'Avg. Recharge PM   : ' + ' ' + '<br>' +
                  '<br>' + 
+                 'Franchise       : ' + ' ' + '<br>' +
+                 'FOS & SAN       : ' + ' ' + '<br>' + 
+                 '<br>' +
                  'Visited By : ' + ' ' ; 
                  document.getElementById('div5').innerHTML = '';
                  document.getElementById('imagea').src = ''; 
