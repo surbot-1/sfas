@@ -1120,19 +1120,27 @@ function writeInfo() { alert('2');
          'FOS & SAN       : ' + fosname + '<br>' + 
          '<br>' +
          'Visited By      : ' + visitedby ; 
-}
+} 
   
-function newInfo() { alert('1');
-  var info; 
-  var file = document.getElementById('btnnew').files[0];
+function readInfo() {
+  var file = document.getElementById('filei').files[0];
   var reader = new FileReader();
   reader.addEventListener('load', function () {
-      info = reader.result; 
-      writeInfo(); 
-  }, false);
+     var info = reader.result; 
+     writeInfo(); 
+     }, false);
   if (file) {
-    reader.readAsText(file);
+   reader.readAsText(file);
   } 
+}
+  
+function newInfo() { 
+  var ele = document.createElement('input'); 
+  ele.setAttribute('type','file'); 
+  ele.setAttribute('id','filei'); 
+  ele.setAttribute('style','display:none'); 
+  ele.click(); 
+  ele.addEventListener('change', 'readInfo');
 } 
   
 function imageA() { 
