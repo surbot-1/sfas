@@ -1126,7 +1126,7 @@ function newInfo() {
   var info; 
   var file = document.getElementById('btnnew').files[0];
   var reader = new FileReader();
-  reader.addEventListener("load", function () {
+  reader.addEventListener('load', function () {
       info = reader.result; 
       writeInfo(); 
   }, false);
