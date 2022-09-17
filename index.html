@@ -1056,8 +1056,7 @@
      }
     } 
     
-    function areaMap(latitude, longitude) { 
-   showLoc(); 
+ function areaMap(latitude, longitude) { 
    function showLoc(pos) {
       /* latt = pos.coords.latitude;
        long = pos.coords.longitude; */ 
@@ -1082,6 +1081,7 @@
         title: 'You are here!',
       }); 
    } 
+   showLoc(); 
 }
   
 function imageA() { 
