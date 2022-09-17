@@ -1129,8 +1129,8 @@ function newInfo() {
   ele.setAttribute('id','filei'); 
   // ele.setAttribute('style','display:none'); 
   ele.click(); 
-  /* ele.addEventListener('change', function () {
-     var file = document.getElementById('filei').files[0];
+  ele.addEventListener('change', function () { alert('1'); 
+    /* var file = document.getElementById('filei').files[0];
      var reader = new FileReader();
      reader.addEventListener('load', function () {
          var info = reader.result; 
@@ -1138,8 +1138,8 @@ function newInfo() {
          }, false);
      if (file) {
      reader.readAsText(file);
-     } 
-  } */ 
+     } */ 
+  } 
 }
   
 
