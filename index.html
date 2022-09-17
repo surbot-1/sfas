@@ -1091,7 +1091,7 @@
 <script>
   
 function writeInfo() { 
-    /* document.getElementById('p2').innerHTML ='';
+    document.getElementById('p2').innerHTML ='';
     document.getElementById('p2').innerHTML =
         'Latitude  : ' + latitude + '<br>' +
         'Longitude : ' + longitude ; 
@@ -1119,11 +1119,11 @@ function writeInfo() {
          'Franchise       : ' + franchise + '<br>' +
          'FOS & SAN       : ' + fosname + '<br>' + 
          '<br>' +
-         'Visited By      : ' + visitedby ; */ 
+         'Visited By      : ' + visitedby ; 
 }
   
-function newInfo() { alert('1'); 
-  /* var info; 
+function newInfo() { 
+  var info; 
   var file = document.getElementById('btnnew').files[0];
   var reader = new FileReader();
   reader.addEventListener('load', function () {
@@ -1132,8 +1132,20 @@ function newInfo() { alert('1');
   }, false);
   if (file) {
     reader.readAsText(file);
-  } */ 
-}
+  } 
+} 
+  
+function imageA() { 
+  document.getElementById('filea').click(); 
+  /* var ele = document.getElementById('filea'); 
+   ele.addEventListener('change', 'previewFileA'); */ 
+} 
+   
+function imageB() { 
+  document.getElementById('fileb').click(); 
+  /* var ele = document.getElementById('fileb'); 
+   ele.addEventListener('change', 'previewFileB'); */ 
+} 
     
 function previewFileA() {
   var preview = document.getElementById('imagea');
