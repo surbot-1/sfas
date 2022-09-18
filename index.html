@@ -1090,7 +1090,7 @@
   
 <script>
   
-function writeInfo() { alert('2'); 
+function writeInfo() { 
     document.getElementById('p2').innerHTML ='';
     document.getElementById('p2').innerHTML =
         'Latitude  : ' + latitude + '<br>' +
@@ -1123,25 +1123,25 @@ function writeInfo() { alert('2');
 } 
   
 function newInfo() { 
-  var ele = document.createElement('input'); 
-  ele.setAttribute('type','file'); 
-  ele.setAttribute('id','filei'); 
-  // ele.setAttribute('onchange','writeInfo()'); 
-  // ele.setAttribute('style','display:none'); 
-  // ele.click(); 
-  ele.addEventListener('change', function () { 
-     // var file = document.getElementById('filei').files[0];
-     var file = ele.files[0];
-     var reader = new FileReader();
-     reader.addEventListener('load', function () {
-         var info = reader.result; alert(info);
-         writeInfo(); 
-         }, false);
-     if (file) { 
-     reader.readAsText(file);
-     } 
-  } , false); 
-  ele.click(); 
+    var ele = document.createElement('input'); 
+    ele.setAttribute('type','file'); 
+    ele.setAttribute('id','filei'); 
+    // ele.setAttribute('onchange','writeInfo()'); 
+    // ele.setAttribute('style','display:none'); 
+    // ele.click(); 
+    ele.addEventListener('change', function () { 
+        // var file = document.getElementById('filei').files[0];
+        var file = ele.files[0];
+        var reader = new FileReader();
+        reader.addEventListener('load', function () {
+            var info = reader.result; alert(info);
+            writeInfo(); 
+            }, false);
+        if (file) { 
+        reader.readAsText(file);
+        } 
+    } , false); 
+    ele.click(); 
 }
   
 
