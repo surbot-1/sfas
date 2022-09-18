@@ -608,12 +608,12 @@
         
         var request; 
         var toread = document.getElementById('ctopno').value; 
-        if (toread != '') { 
+        // if (toread != '') { 
             var transaction = db.transaction(['posbsnl']);
             var objectStore = transaction.objectStore('posbsnl');
             request = objectStore.get(toread); 
-        } /* else { 
-           toread = document.getElementById('shopname').value; 
+        // } else { 
+           /* toread = document.getElementById('shopname').value; 
            var transaction = db.transaction(['posbsnl']);
            var objectStore = transaction.objectStore('posbsnl');
            var index = objectStore.index('shponame');
@@ -701,7 +701,7 @@
             togglereadall = false; 
             document.getElementById('p6').innerHTML =''; 
             document.getElementById('p6').innerHTML += 
-            'All POS(Point Of Sale)' + '<br>';
+            'All POS (Point Of Sale)' + '<br>';
             var serialno = 1; 
             var transaction = db.transaction(['posbsnl']);
             var objectStore = transaction.objectStore('posbsnl');
