@@ -1147,8 +1147,7 @@ function getInfo() {
     franchise = info.substring(info.indexOf('Franchise')+11, info.indexOf('FOS & SAN')-1); 
     fosname = info.substring(info.indexOf('FOS & SAN')+11, info.indexOf('Visited By')-1); 
     visitedby = info.substring(info.indexOf('Visited By')+12); 
-        
-    document.getElementById('p5').innerHTML = ctopno + 'A'; 
+    
     writeInfo(); 
 }
   
@@ -1164,8 +1163,7 @@ function newInfo() {
         var file = ele.files[0];
         var reader = new FileReader();
         reader.addEventListener('load', function () {
-            info = reader.result; // alert(info); 
-            document.getElementById('p6').innerHTML = info; 
+            info = reader.result; 
             getInfo(); 
             }, false);
         if (file) { 
