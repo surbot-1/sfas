@@ -1123,7 +1123,6 @@ function writeInfo() { alert('2');
 } 
   
 function newInfo() { 
-  alert('1'); // writeInfo(); 
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','filei'); 
@@ -1131,7 +1130,8 @@ function newInfo() {
   // ele.setAttribute('style','display:none'); 
   // ele.click(); 
   ele.addEventListener('change', function () { 
-     var file = ele.files[0]; // var file = document.getElementById('filei').files[0];
+     // var file = document.getElementById('filei').files[0];
+     var file = ele.files[0];
      var reader = new FileReader();
      reader.addEventListener('load', function () {
          var info = reader.result; 
