@@ -702,7 +702,7 @@
             document.getElementById('p6').innerHTML =''; 
             document.getElementById('p6').innerHTML += 
             'All POS (Point Of Sale)' + '<br>';
-            var serialno = 1; 
+            var serialno = 0; var count = ''; 
             var transaction = db.transaction(['posbsnl']);
             var objectStore = transaction.objectStore('posbsnl');
         
@@ -764,18 +764,19 @@
                   'Visited By : ' + visitedby + '<br>' +
                   '<br>' + 
                   '<br>' ; */ 
+                  serialno++; 
+                  count = serialno < 10 ? count=' '+ serialno : serialno; 
                   document.getElementById('p6').innerHTML += 
-                    serialno + '.' + ' ' + 
+                    count + '.' + ' ' + 
                     ctopno + ' ' + 
                     /* altno + ' ' + */ 
                     shopname + ' ' + 
                     street + ' ' +
                     locality + '<br>'; 
-                  serialno++; 
                   cursor.continue();
                } else { 
                   document.getElementById('p6').innerHTML += 
-                  'Total POS Count = ' + (serialno-1); 
+                  'Total POS Count = ' + serialno; 
                   /* alert('No more entries!'); */ 
                }
             }; 
