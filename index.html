@@ -1126,9 +1126,9 @@ function writeInfo() {
 } 
   
 function getInfo() { 
-    latitude = info.subString(info.indexOf('Lattitude')+9, 10 );
-    longitude = info.subString(); 
-    ctopno = info.subString(info.indexOf('CTOPUP')+9, 10 );
+    latitude = info.substring(info.indexOf('Lattitude')+9, 10 );
+    longitude = info.substring(); 
+    ctopno = info.substring(info.indexOf('CTOPUP')+9, info.indexOf('Alternate'));
     document.getElementById('p5').innerHTML = ctopno; 
     writeInfo(); 
 }
