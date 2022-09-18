@@ -350,6 +350,7 @@
     var imageb='';
     var remark=''; 
     var time=''; 
+    var info=''; 
     
     var togglecoords = true; 
     var togglemap = true; 
@@ -1121,8 +1122,16 @@ function writeInfo() {
          '<br>' +
          'Visited By      : ' + visitedby ; 
   
-     areaMap(latitude,longitude); 
+    areaMap(latitude,longitude); 
 } 
+  
+function getInfo() { 
+    latitude = info.subString(info.indexOf('Lattitude')+9, 10 );
+    longitude = info.subString(); 
+    ctopno = info.subString(info.indexOf('CTOPUP')+9, 10 );
+    document.getElementById('p5').innerHTML = ctopno; 
+    writeInfo(); 
+}
   
 function newInfo() { 
     var ele = document.createElement('input'); 
@@ -1136,9 +1145,9 @@ function newInfo() {
         var file = ele.files[0];
         var reader = new FileReader();
         reader.addEventListener('load', function () {
-            var info = reader.result; // alert(info); 
+            info = reader.result; // alert(info); 
             document.getElementById('p6').innerHTML = info; 
-            writeInfo(); 
+            getInfo(); 
             }, false);
         if (file) { 
         reader.readAsText(file);
