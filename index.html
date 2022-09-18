@@ -1127,7 +1127,7 @@ function writeInfo() {
   
 function getInfo() { 
     latitude = info.substring(info.indexOf('Latitude')+10, info.indexOf('Longitude')); 
-    longitude = info.substring(info.indexOf('Longitude')+11, info.indexOf('CTOP No')); 
+    longitude = info.substring(info.indexOf('Longitude')+11, info.indexOf('CTOPUP No')); 
     ctopno = info.substring(info.indexOf('CTOPUP No')+11, info.indexOf('Alternate No'));
     document.getElementById('p5').innerHTML = ctopno; 
     writeInfo(); 
