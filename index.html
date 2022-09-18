@@ -1126,27 +1126,27 @@ function writeInfo() {
 } 
   
 function getInfo() { 
-    latitude = info.substring(info.indexOf('Latitude')+10, info.indexOf('Longitude')-1); 
-    longitude = info.substring(info.indexOf('Longitude')+11, info.indexOf('CTOPUP No')-1); 
-    ctopno = info.substring(info.indexOf('CTOPUP No')+11, info.indexOf('Alternate No')-1); 
-    altno = info.substring(info.indexOf('Alternate No')+14, info.indexOf('Email ID')-1); 
-    emailid = info.substring(info.indexOf('Email ID')+10, info.indexOf('POS Name')-1); 
-    posname = info.substring(info.indexOf('POS Name')+10, info.indexOf('Gender')-1); 
-    posgend = info.substring(info.indexOf('Gender')+8, info.indexOf('Shop Name')-1); 
-    shopname = info.substring(info.indexOf('Shop Name')+11, info.indexOf('Shop No')-1); 
-    shopno = info.substring(info.indexOf('Shop No')+9, info.indexOf('Street/Village')-1); 
-    street = info.substring(info.indexOf('Street/Village')+16, info.indexOf('Landmark/PO')-1); 
-    landmark = info.substring(info.indexOf('Landmark/PO')+13, info.indexOf('Locality/Tehsil')-1); 
-    locality = info.substring(info.indexOf('Locality/Tehsil')+17, info.indexOf('City/District')-1); 
-    city = info.substring(info.indexOf('City/District')+15, info.indexOf('State/UT')-1); 
-    state = info.substring(info.indexOf('State/UT')+10, info.indexOf('PIN Code')-1); 
-    pincode = info.substring(info.indexOf('PIN Code')+10, info.indexOf('Avg. Activation PM')-1); 
-    activation = info.substring(info.indexOf('Avg. Activation PM')+20, info.indexOf('Avg. MNP PM')-1); 
-    mnp = info.substring(info.indexOf('Avg. MNP PM')+13, info.indexOf('Avg. Recharge PM')-1); 
-    recharge = info.substring(info.indexOf('Avg. Recharge PM')+18, info.indexOf('Franchise')-1); 
-    franchise = info.substring(info.indexOf('Franchise')+11, info.indexOf('FOS & SAN')-1); 
-    fosname = info.substring(info.indexOf('FOS & SAN')+11, info.indexOf('Visited By')-1); 
-    visitedby = info.substring(info.indexOf('Visited By')+12); 
+    latitude = info.substring(info.indexOf('Latitude')+11, info.indexOf('Longitude')-1); 
+    longitude = info.substring(info.indexOf('Longitude')+12, info.indexOf('CTOPUP No')-1); 
+    ctopno = info.substring(info.indexOf('CTOPUP No')+12, info.indexOf('Alternate No')-1); 
+    altno = info.substring(info.indexOf('Alternate No')+15, info.indexOf('Email ID')-1); 
+    emailid = info.substring(info.indexOf('Email ID')+11, info.indexOf('POS Name')-1); 
+    posname = info.substring(info.indexOf('POS Name')+11, info.indexOf('Gender')-1); 
+    posgend = info.substring(info.indexOf('Gender')+9, info.indexOf('Shop Name')-1); 
+    shopname = info.substring(info.indexOf('Shop Name')+12, info.indexOf('Shop No')-1); 
+    shopno = info.substring(info.indexOf('Shop No')+10, info.indexOf('Street/Village')-1); 
+    street = info.substring(info.indexOf('Street/Village')+17, info.indexOf('Landmark/PO')-1); 
+    landmark = info.substring(info.indexOf('Landmark/PO')+14, info.indexOf('Locality/Tehsil')-1); 
+    locality = info.substring(info.indexOf('Locality/Tehsil')+18, info.indexOf('City/District')-1); 
+    city = info.substring(info.indexOf('City/District')+16, info.indexOf('State/UT')-1); 
+    state = info.substring(info.indexOf('State/UT')+11, info.indexOf('PIN Code')-1); 
+    pincode = info.substring(info.indexOf('PIN Code')+11, info.indexOf('Avg. Activation PM')-1); 
+    activation = info.substring(info.indexOf('Avg. Activation PM')+21, info.indexOf('Avg. MNP PM')-1); 
+    mnp = info.substring(info.indexOf('Avg. MNP PM')+14, info.indexOf('Avg. Recharge PM')-1); 
+    recharge = info.substring(info.indexOf('Avg. Recharge PM')+19, info.indexOf('Franchise')-1); 
+    franchise = info.substring(info.indexOf('Franchise')+12, info.indexOf('FOS & SAN')-1); 
+    fosname = info.substring(info.indexOf('FOS & SAN')+12, info.indexOf('Visited By')-1); 
+    visitedby = info.substring(info.indexOf('Visited By')+13); 
     
     writeInfo(); 
 }
