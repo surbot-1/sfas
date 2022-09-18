@@ -1134,7 +1134,7 @@ function newInfo() {
      var file = ele.files[0];
      var reader = new FileReader();
      reader.addEventListener('load', function () {
-         var info = reader.result; 
+         var info = reader.result; alert(info);
          writeInfo(); 
          }, false);
      if (file) { 
