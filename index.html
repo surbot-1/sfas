@@ -1130,16 +1130,16 @@ function newInfo() {
   // ele.setAttribute('onchange','writeInfo()'); 
   // ele.setAttribute('style','display:none'); 
   // ele.click(); 
-  ele.addEventListener('change', function () { alert('1'); 
-    /* var file = document.getElementById('filei').files[0];
+  ele.addEventListener('change', function () { 
+     var file = document.getElementById('filei').files[0];
      var reader = new FileReader();
      reader.addEventListener('load', function () {
          var info = reader.result; 
          writeInfo(); 
          }, false);
-     if (file) {
+     if (file) { 
      reader.readAsText(file);
-     } */ 
+     } 
   } , false); 
   ele.click(); 
 }
