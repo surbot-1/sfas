@@ -352,6 +352,7 @@
     var time=''; 
     var info=''; 
     var allpos=''; 
+    var count=''; 
     
     var togglecoords = true; 
     var togglemap = true; 
@@ -703,7 +704,7 @@
             document.getElementById('p6').innerHTML =''; 
             document.getElementById('p6').innerHTML += 
             'All POS (Point Of Sale)' + '<br>';
-            var serialno = 0; var count = ''; 
+            var serialno = 0; // var count = ''; 
             var transaction = db.transaction(['posbsnl']);
             var objectStore = transaction.objectStore('posbsnl');
         
@@ -800,23 +801,22 @@
           document.getElementById('p6').innerHTML = ''; 
           allpos = ''; 
         } 
-        
-        function allPos() {
+    } 
+    
+    function allPos() {
           alert('1'); 
           var c = document.createElement('a');
           c.download = 'pos_sangrur' + '.txt';
 
           var t = new Blob([allpos], {
-            type: 'text/plain'
+              type: 'text/plain'
           }); 
           var d = 'All POS (Point Of Sale)' + '\n' + 
                    t +
                   'Total POS Count = ' + count + ' '; 
           c.href = window.URL.createObjectURL(d);
           c.click();
-        }
-      
-    } 
+    }
 
     
     
