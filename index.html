@@ -796,6 +796,14 @@
     
     function allPos() {
       alert('1'); 
+      var c = document.createElement('a');
+      c.download = 'allpos' + '.txt';
+
+      var t = new Blob([allpos], {
+      type: 'text/plain'
+      });
+      c.href = window.URL.createObjectURL(t);
+      c.click();
     }
     
     </script> 
