@@ -795,7 +795,7 @@
                    a.setAttribute('id', 'dwnallpos');
                    a.setAttribute('href', '#');
                    a.setAttribute('download', 'abc'); 
-                   a.setAttribute('onclick', 'allPos(); return false;');
+                   a.setAttribute('onclick', 'downloadAllPos(); return false;');
                    a.textContent = 'Download'; 
                    document.getElementById('p6').appendChild(a);
                   /* alert('No more entries!'); */ 
@@ -806,8 +806,9 @@
           document.getElementById('p6').innerHTML = ''; 
           allpos = ''; 
         } 
-      
-        function allPos() {
+    } 
+    
+    function downloadAllPos() {
           alert('1'); 
           var c = document.createElement('a');
           c.download = 'pos_sangrur' + '.txt';
@@ -818,8 +819,7 @@
 
           c.href = window.URL.createObjectURL(t);
           c.click();
-        } 
-    } 
+     } 
     
     
     
