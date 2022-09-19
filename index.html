@@ -774,10 +774,17 @@
                     shopname + ' ' + 
                     street + ' ' +
                     locality + '<br>'; 
+                   allpos = 
+                    count + '.' + ' ' + 
+                    ctopno + ' ' + 
+                    /* altno + ' ' + */ 
+                    shopname + ' ' + 
+                    street + ' ' +
+                    locality + '\n'; 
                   cursor.continue();
                } else { 
                   document.getElementById('p6').innerHTML += 
-                  'Total POS Count = ' + serialno + ' '; 
+                  'Total POS Count = ' + count + ' '; 
                    var a = document.createElement('a');
                    a.setAttribute('id', 'dwnallpos');
                    a.setAttribute('href', '#');
