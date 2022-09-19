@@ -786,9 +786,11 @@
                } else { 
                   document.getElementById('p6').innerHTML += 
                   'Total POS Count = ' + count + ' '; 
+                 
                    allpos = 'All POS (Point Of Sale)' + '\n' + 
                             allpos +
                             'Total POS Count = ' + count + ' '; 
+                 
                    var a = document.createElement('a');
                    a.setAttribute('id', 'dwnallpos');
                    a.setAttribute('href', '#');
@@ -815,7 +817,7 @@
               type: 'text/plain'
           }); 
 
-          c.href = window.URL.createObjectURL(d);
+          c.href = window.URL.createObjectURL(t);
           c.click();
     }
 
