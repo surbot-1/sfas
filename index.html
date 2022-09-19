@@ -809,8 +809,11 @@
 
       var t = new Blob([allpos], {
       type: 'text/plain'
-      });
-      c.href = window.URL.createObjectURL(t);
+      }); 
+      var d = 'All POS (Point Of Sale)' + '\n' + 
+               t +
+              'Total POS Count = ' + count + ' '; 
+      c.href = window.URL.createObjectURL(d);
       c.click();
     }
     
