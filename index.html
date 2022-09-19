@@ -776,12 +776,12 @@
                   cursor.continue();
                } else { 
                   document.getElementById('p6').innerHTML += 
-                  'Total POS Count = ' + serialno + ' '; 
+                  'Total POS Count = ' + serialno + '<br>'; 
                    var a = document.createElement('a');
                    a.setAttribute('id', 'dwnallpos');
                    a.setAttribute('href', '#');
                    a.setAttribute('download', 'abc'); 
-                   a.setAttribute('onclick', 'allPos()');
+                   a.setAttribute('onclick', 'allPos(); return false;');
                    a.textContent = 'Download'; 
                    document.getElementById('p6').appendChild(a);
                   /* alert('No more entries!'); */ 
