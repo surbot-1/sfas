@@ -774,7 +774,7 @@
                     shopname + ' ' + 
                     street + ' ' +
                     locality + '<br>'; 
-                   allpos = 
+                  allpos += 
                     count + '.' + ' ' + 
                     ctopno + ' ' + 
                     /* altno + ' ' + */ 
@@ -798,6 +798,7 @@
         } else if (!togglereadall) { 
           togglereadall = true; 
           document.getElementById('p6').innerHTML = ''; 
+          allpos = ''; 
         }
     } 
     
