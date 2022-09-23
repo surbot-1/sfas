@@ -221,7 +221,7 @@
     <input type='text' class='input' id='ctopno' placeholder='CTOPUP No.'> CTOPUP No. <br>
     <input type='text' class='input' id='altno' placeholder='Alternate No.'> Alternate No. <br>
     <input type='text' class='input' id='emailid' placeholder='Email ID'> Email ID <br>
-    <input type='text' class='input' id='posname' placeholder='Ret. Name'> Ret. Name <br>
+    <input type='text' class='input' id='posname' placeholder='Retailer Name'> Retailer Name <br>
     <input type='text' class='input' id='posgend' placeholder='Gender'> Gender <br>
     <input type='text' class='input' id='shopname' placeholder='Shop Name'> Shop Name <br>
     <br>
@@ -489,7 +489,7 @@
         'CTOPUP No       : ' + ctopno + '<br>' +
         'Alternate No    : ' + altno + '<br>' +
         'Email ID        : ' + emailid + '<br>' +
-        'POS Name        : ' + posname + '<br>' +
+        'Retailer Name        : ' + posname + '<br>' +
         'Gender          : ' + posgend + '<br>' +
         'Shop Name       : ' + shopname + '<br>' + 
         '<br>' +
@@ -565,7 +565,7 @@
                  'CTOPUP No       : ' + ctopno + '<br>' +
                  'Alternate No    : ' + altno + '<br>' +
                  'Email ID        : ' + emailid + '<br>' +
-                 'POS Name        : ' + posname + '<br>' +
+                 'Retailer Name   : ' + posname + '<br>' +
                  'Gender          : ' + posgend + '<br>' +
                  'Shop Name       : ' + shopname + '<br>' + 
                  '<br>' +
@@ -659,7 +659,7 @@
                  'CTOPUP No       : ' + ctopno + '<br>' +
                  'Alternate No    : ' + altno + '<br>' +
                  'Email ID        : ' + emailid + '<br>' +
-                 'POS Name        : ' + posname + '<br>' +
+                 'Retailer Name   : ' + posname + '<br>' +
                  'Gender          : ' + posgend + '<br>' +
                  'Shop Name       : ' + shopname + '<br>' + 
                  '<br>' +
@@ -746,7 +746,7 @@
                   'CTOPUP No       : ' + ctopno + '<br>' +
                   'Alternate No    : ' + altno + '<br>' +
                   'Email ID        : ' + emailid + '<br>' +
-                  'POS Name        : ' + posname + '<br>' +
+                  'Retailer Name        : ' + posname + '<br>' +
                   'Gender          : ' + posgend + '<br>' +
                   'Shop Name       : ' + shopname + '<br>' + 
                   '<br>' +
@@ -836,7 +836,7 @@
     "<input type='text' class='input' id='ctopno' placeholder='CTOPUP No.'> CTOPUP No. <br>" + 
     "<input type='text' class='input' id='altno' placeholder='Alternate No.'> Alternate No. <br>" + 
     "<input type='text' class='input' id='emailid' placeholder='Email ID'> Email ID <br>" + 
-    "<input type='text' class='input' id='posname' placeholder='POS Name'> POS Name <br>" + 
+    "<input type='text' class='input' id='posname' placeholder='Retailer Name'> Retailer Name <br>" + 
     "<input type='text' class='input' id='posgend' placeholder='Gender'> Gender <br>" + 
     "<input type='text' class='input' id='shopname' placeholder='Shop Name'> Shop Name <br>" + 
     "<br>" + 
@@ -942,7 +942,7 @@
                  'CTOPUP No       : ' + ctopno + '<br>' +
                  'Alternate No    : ' + altno + '<br>' +
                  'Email ID        : ' + emailid + '<br>' +
-                 'POS Name        : ' + posname + '<br>' +
+                 'Retailer Name   : ' + posname + '<br>' +
                  'Gender          : ' + posgend + '<br>' +
                  'Shop Name       : ' + shopname + '<br>' + 
                  '<br>' +
@@ -1002,7 +1002,7 @@
                  'CTOPUP No       : ' + ' ' + '<br>' +
                  'Alternate No    : ' + ' ' + '<br>' +
                  'Email ID        : ' + ' ' + '<br>' +
-                 'POS Name        : ' + ' ' + '<br>' +
+                 'Retailer Name   : ' + ' ' + '<br>' +
                  'Gender          : ' + ' ' + '<br>' +
                  'Shop Name       : ' + ' ' + '<br>' + 
                  '<br>' +
@@ -1144,7 +1144,7 @@ function writeInfo() {
          'CTOPUP No       : ' + ctopno + '<br>' +
          'Alternate No    : ' + altno + '<br>' +
          'Email ID        : ' + emailid + '<br>' +
-         'POS Name        : ' + posname + '<br>' +
+         'Retailer Name   : ' + posname + '<br>' +
          'Gender          : ' + posgend + '<br>' +
          'Shop Name       : ' + shopname + '<br>' + 
          '<br>' +
@@ -1335,13 +1335,13 @@ function back() {
   
 function download() { 
   // var data = document.getElementById('imagea').value;
-  var data =     'Latitude : ' + latitude + '\n' + 
-                 'Longitude : ' + longitude + '\n' + 
+  var data =     'POS (Point Of Sale)' + '\n' + 
+                 'Geolocation : ' latitude + ', ' + longitude + '\n' + 
                  '\n' +   
                  'CTOPUP No : ' + ctopno + '\n' +
                  'Alternate No : ' + altno + '\n' +
                  'Email ID : ' + emailid + '\n' +
-                 'POS Name : ' + posname + '\n' +
+                 'Retailer Name : ' + posname + '\n' +
                  'Gender : ' + posgend + '\n' +
                  'Shop Name : ' + shopname + '\n' + 
                  '\n' +
