@@ -1169,12 +1169,12 @@ function writeInfo() {
 } 
   
 function getInfo() { 
-    latitude = info.substring(info.indexOf('Latitude')+11, info.indexOf('Longitude')-1); 
-    longitude = info.substring(info.indexOf('Longitude')+12, info.indexOf('CTOPUP No')-1); 
+    latitude = info.substring(info.indexOf('Geolocation')+14, info.indexOf(',')-1); 
+    longitude = info.substring(info.indexOf(',')+2, info.indexOf('CTOPUP No')-1); 
     ctopno = info.substring(info.indexOf('CTOPUP No')+12, info.indexOf('Alternate No')-1); 
     altno = info.substring(info.indexOf('Alternate No')+15, info.indexOf('Email ID')-1); 
-    emailid = info.substring(info.indexOf('Email ID')+11, info.indexOf('POS Name')-1); 
-    posname = info.substring(info.indexOf('POS Name')+11, info.indexOf('Gender')-1); 
+    emailid = info.substring(info.indexOf('Email ID')+11, info.indexOf('Retailer Name')-1); 
+    posname = info.substring(info.indexOf('Retailer Name')+16, info.indexOf('Gender')-1); 
     posgend = info.substring(info.indexOf('Gender')+9, info.indexOf('Shop Name')-1); 
     shopname = info.substring(info.indexOf('Shop Name')+12, info.indexOf('Shop No')-1); 
     shopno = info.substring(info.indexOf('Shop No')+10, info.indexOf('Street/Village')-1); 
