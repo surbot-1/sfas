@@ -481,8 +481,9 @@
       
       document.getElementById('p2').innerHTML ='';
       document.getElementById('p2').innerHTML = 
-        'Latitude        : ' + latitude + '<br>' +
-        'Longitude       : ' + longitude ; 
+        'POS (Point Of Sale)' + 
+        '<br>' +
+        'Geolocation : ' + latitude + ', ' + longitude; 
       document.getElementById('p3').innerHTML ='';
       document.getElementById('p3').innerHTML = 
         'CTOPUP No       : ' + ctopno + '<br>' +
@@ -555,9 +556,10 @@
        }); 
        request.onsuccess = function(event) { 
               document.getElementById('p2').innerHTML ='';
-              document.getElementById('p2').innerHTML =
-                 'Latitude  : ' + latitude + '<br>' +
-                 'Longitude : ' + longitude ; 
+              document.getElementById('p2').innerHTML = 
+                'POS (Point Of Sale)' + 
+                '<br>' +
+                'Geolocation : ' + latitude + ', ' + longitude; 
               document.getElementById('p3').innerHTML ='';
               document.getElementById('p3').innerHTML = 
                  'CTOPUP No       : ' + ctopno + '<br>' +
@@ -648,9 +650,10 @@
                   imagea = request.result.imagea; 
                   imageb = request.result.imageb; 
                  document.getElementById('p2').innerHTML ='';
-                 document.getElementById('p2').innerHTML =
-                 'Latitude  : ' + latitude + '<br>' +
-                 'Longitude : ' + longitude ; 
+                 document.getElementById('p2').innerHTML = 
+                   'POS (Point Of Sale)' + 
+                   '<br>' +
+                   'Geolocation : ' + latitude + ', ' + longitude; 
                  document.getElementById('p3').innerHTML ='';
                  document.getElementById('p3').innerHTML = 
                  'CTOPUP No       : ' + ctopno + '<br>' +
@@ -858,9 +861,9 @@
       doc1.insertAdjacentHTML('afterbegin', child1); 
       
       document.getElementById('p2').innerHTML = 
-        'Latitude :' + latitude + 
+        'POS (Point Of Sale)' + 
         '<br>' +
-        'Longitude :' + longitude; 
+        'Geolocation : ' + latitude + ', ' + longitude; 
       document.getElementById('ctopno').value = ctopno; 
       document.getElementById('altno').value = altno; 
       document.getElementById('emailid').value = emailid; 
@@ -930,9 +933,10 @@
        }); 
        request.onsuccess = function(event) { 
               document.getElementById('p2').innerHTML ='';
-              document.getElementById('p2').innerHTML =
-                 'Latitude  : ' + latitude + '<br>' +
-                 'Longitude : ' + longitude ; 
+              document.getElementById('p2').innerHTML = 
+                'POS (Point Of Sale)' + 
+                '<br>' +
+                'Geolocation : ' + latitude + ', ' + longitude; 
               document.getElementById('p3').innerHTML ='';
               document.getElementById('p3').innerHTML = 
                  'CTOPUP No       : ' + ctopno + '<br>' +
@@ -989,9 +993,10 @@
             
             request.onsuccess = function(event) { 
                  document.getElementById('p2').innerHTML ='';
-                 document.getElementById('p2').innerHTML =
-                 'Latitude  : ' + ' ' + '<br>' +
-                 'Longitude : ' + ' ' ; 
+                 document.getElementById('p2').innerHTML = 
+                   'POS (Point Of Sale)' + 
+                   '<br>' +
+                   'Geolocation : ' + ' ' + ', ' + ' '; 
                  document.getElementById('p3').innerHTML ='';
                  document.getElementById('p3').innerHTML = 
                  'CTOPUP No       : ' + ' ' + '<br>' +
@@ -1130,9 +1135,10 @@
   
 function writeInfo() { 
     document.getElementById('p2').innerHTML ='';
-    document.getElementById('p2').innerHTML =
-        'Latitude  : ' + latitude + '<br>' +
-        'Longitude : ' + longitude ; 
+    document.getElementById('p2').innerHTML = 
+        'POS (Point Of Sale)' + 
+        '<br>' +
+        'Geolocation : ' + latitude + ', ' + longitude; 
     document.getElementById('p3').innerHTML ='';
     document.getElementById('p3').innerHTML = 
          'CTOPUP No       : ' + ctopno + '<br>' +
