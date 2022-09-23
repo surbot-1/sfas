@@ -385,10 +385,10 @@
     } 
     function showLoc(pos) { 
       document.getElementById('p2').innerHTML = 
-        'Latitude  : ' +
-        pos.coords.latitude +
+        'POS (Point Of Sale)' +
         '<br>' + 
-        'Longitude : ' +
+        'Geolocation : ' + 
+        pos.coords.latitude + ', '+
         pos.coords.longitude; 
       latitude = pos.coords.latitude ;
       longitude = pos.coords.longitude ;  
