@@ -1367,14 +1367,15 @@ function download() {
                  'Image2 : ' + imageb + '\n' +
                  'Remark : ' + remark + '\n' +
                  'Time : ' + time;  */ 
-  var c = document.createElement('a');
-  c.download = ctopno + '_info' + '.txt';
+  var a = document.createElement('a');
+  a.download = ctopno + '_info' + '.txt';
 
   var t = new Blob([data], {
   type: 'text/plain'
   });
-  c.href = window.URL.createObjectURL(t);
-  c.click();
+  a.href = window.URL.createObjectURL(t); 
+  window.URL.revokeObjectURL(a.href); 
+  a.click();
 } 
   
 function downloadA() { 
@@ -1388,7 +1389,8 @@ function downloadA() {
         a.download = ctopno + '_image1' + '.jpg';
         a.style.display = 'none';
         document.body.appendChild(a);
-        a.click();
+        a.click(); 
+        window.URL.revokeObjectURL(a.href); 
         a.remove();
       };
       xhr.open('GET', imagea); // This is to download the canvas Image
@@ -1406,7 +1408,8 @@ function downloadB() {
         a.download = ctopno + '_image2' + '.jpg';
         a.style.display = 'none';
         document.body.appendChild(a);
-        a.click();
+        a.click(); 
+        window.URL.revokeObjectURL(a.href); 
         a.remove();
       };
       xhr.open('GET', imageb); // This is to download the canvas Image
