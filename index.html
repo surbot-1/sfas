@@ -283,6 +283,7 @@
     <p class='p4' id='p4'></p> 
     <p class='p5' id='p5'></p> 
     <p class='p6' id='p6'></p> 
+    <p class='p6' id='p7'></p> 
   </div>
   <script src='https://maps.google.com/maps/api/js?sensor=false'></script> 
   
@@ -1416,7 +1417,28 @@ function downloadB() {
       xhr.send();
 }
   
-</script>
+</script> 
+  
+  
+  <script>
+    alert('1');
+    function createTable() {
+      document.getElementById('p7').innerHTML = 'List of POS (Point Of Sale)';
+      var table = document.createElement('TABLE'); 
+      table.setAttribut('id','table'); 
+      document.getElementById('p7').appendChild(table);
+      var tbody = document.createElement('TBODY'); 
+      tbody.setAttribut('id','tbody'); 
+      document.getElementById('table').appendChild(tbody);
+      var tr = document.createElement('TR'); 
+      tr.setAttribut('id','tr'); 
+      document.getElementById('tbody').appendChild(tr);
+      var td = document.createElement('TD'); 
+      td.setAttribut('id','td'); 
+      document.getElementById('tr').appendChild(td); 
+    }
+    
+  </script>
   
 
   <script> 
