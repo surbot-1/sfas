@@ -717,7 +717,7 @@
             togglereadall = false; 
             document.getElementById('p6').innerHTML =''; 
             document.getElementById('p6').innerHTML += 
-            'All POS (Point Of Sale)' + '<br>';
+            'List of POS (Point Of Sale)' + '<br>';
             var serialno = 0; var count = ''; 
             var transaction = db.transaction(['posbsnl']);
             var objectStore = transaction.objectStore('posbsnl');
@@ -801,7 +801,7 @@
                   document.getElementById('p6').innerHTML += 
                   'Total POS Count = ' + count + '<br>' + '<br>'; 
                  
-                   allpos = 'All POS (Point Of Sale)' + '\n' + 
+                   allpos = 'List of POS (Point Of Sale)' + '\n' + 
                             allpos +
                             'Total POS Count = ' + count + ' '; 
                  
