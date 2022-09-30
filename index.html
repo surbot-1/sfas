@@ -1432,7 +1432,7 @@ function downloadB() {
   
     
 <script>
-  alert('1'); createTable(); 
+  alert('5'); createTable(); 
 function createTable() {
   var table = document.createElement('TABLE'); 
   table.setAttribute('id','table'); 
@@ -1447,12 +1447,12 @@ function createTable() {
   // document.getElementById('table').appendChild(tbody);
   table.appendChild(tbody); 
   var tr = document.createElement('TR');
-  var th = document.createElement('TH');
-  th.colSpan = '4'; 
-  th.style = 'border: 1px solid black';
+  var td = document.createElement('TD');
+  td.colSpan = '4'; 
+  td.style = 'border: 1px solid black';
   // td.style.textAlign = 'center'; 
-  th.innerHTML = 'List of POS (Point Of Sale)';
-  tr.appendChild(th);
+  tr.innerHTML = 'List of POS (Point Of Sale)';
+  tr.appendChild(td);
   tbody.appendChild(tr); 
 }
     
