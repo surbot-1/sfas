@@ -1432,22 +1432,24 @@ function downloadB() {
   
     
 <script>
-  alert('5'); createTable(); // createTable(); 
+  alert('1'); createTable(); // createTable(); 
 function createTable() {
   var table = document.createElement('TABLE'); 
   table.setAttribute('id','table'); 
   table.style =  'border: 1px solid black';
+  // table.style.textAlign = 'center';
   document.getElementById('p7').appendChild(table); 
   // var caption = document.getElementById('table').createCaption();
   var caption = table.createCaption(); 
   caption.innerHTML = '<b>List of POS (Point Of Sale)</b>'; 
   var tbody = document.createElement('TBODY');
-  var tr = document.createElement('TR');
+  /* var tr = document.createElement('TR');
   var td = document.createElement('TD');
   td.style = 'border: 1px solid black';
+  // td.style.textAlign = 'center'; 
   td.innerHTML = 'Table Cell';
   tr.appendChild(td);
-  tbody.appendChild(tr);
+  tbody.appendChild(tr); */
   // document.getElementById('table').appendChild(tbody);
   table.appendChild(tbody); 
 }
