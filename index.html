@@ -1432,20 +1432,20 @@ function downloadB() {
   
   
   <script>
-    alert('2'); createTable(); 
+    alert('1'); createTable(); 
     function createTable() {
-      document.getElementById('p7').innerHTML = 'List of POS (Point Of Sale)';
+      document.getElementById('p7').innerHTML = 'List of POS (Point Of Sale)'+'<br>';
       var table = document.createElement('TABLE'); 
-      table.setAttribut('id','table'); 
+      table.setAttribute('id','table'); 
       document.getElementById('p7').appendChild(table);
       var tbody = document.createElement('TBODY'); 
-      tbody.setAttribut('id','tbody'); 
+      tbody.setAttribute('id','tbody'); 
       document.getElementById('table').appendChild(tbody);
       var tr = document.createElement('TR'); 
-      tr.setAttribut('id','tr'); 
+      tr.setAttribute('id','tr'); 
       document.getElementById('tbody').appendChild(tr);
       var td = document.createElement('TD'); 
-      td.setAttribut('id','td'); 
+      td.setAttribute('id','td'); 
       document.getElementById('tr').appendChild(td); 
       var t = document.createTextNode('Cell'); 
       document.getElementById('td').appendChild(t);
