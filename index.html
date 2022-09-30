@@ -1436,6 +1436,9 @@ function downloadB() {
 <script>
   alert('3'); createTable(); createTable(); 
 function createTable() {
+  var table = document.getElementById('table');
+  var caption = table.createCaption(); 
+  caption.innerHTML = '<b>List of POS (Point Of Sale)</b>'; 
   var tbody = document.createElement('TBODY');
   var tr = document.createElement('TR');
   var td = document.createElement('TD');
