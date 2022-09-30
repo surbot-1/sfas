@@ -1432,7 +1432,7 @@ function downloadB() {
   
     
 <script>
-  alert('1'); createTable(); 
+  alert('2'); createTable(); 
 function createTable() {
   var table = document.createElement('TABLE'); 
   table.setAttribute('id','table'); 
@@ -1448,7 +1448,7 @@ function createTable() {
   table.appendChild(tbody); */ 
   var tr = document.createElement('TR');
   var td = document.createElement('TD');
-  td.colSpan = '4'; 
+  // td.colSpan = '4'; 
   td.style = 'border: 1px solid black';
   // td.style.textAlign = 'center'; 
   td.innerHTML = 'List of POS (Point Of Sale)';
