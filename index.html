@@ -159,8 +159,8 @@
       margin-left: 20px;
     }
     
-    .table, td {
-       border: 1px solid black;
+    table, td {
+      
     }
 
   </style>
@@ -294,9 +294,7 @@
     <p class='p4' id='p4'></p> 
     <p class='p5' id='p5'></p> 
     <p class='p6' id='p6'></p> 
-    <p class='p7' id='p7'>
-      <table class='table' id='table'></table> 
-    </p> 
+    <p class='p7' id='p7'></p> 
   </div>
   <script src='https://maps.google.com/maps/api/js?sensor=false'></script> 
   
@@ -1434,25 +1432,32 @@ function downloadB() {
   
     
 <script>
-  alert('1'); createTable(); createTable(); 
+  alert('5'); createTable(); // createTable(); 
 function createTable() {
-  var table = document.getElementById('table');
+  var table = document.createElement('TABLE'); 
+  table.setAttribute('id','table'); 
+  table.style =  'border: 1px solid black';
+  document.getElementById('p7').appendChild(table); 
+  // var caption = document.getElementById('table').createCaption();
   var caption = table.createCaption(); 
   caption.innerHTML = '<b>List of POS (Point Of Sale)</b>'; 
   var tbody = document.createElement('TBODY');
   var tr = document.createElement('TR');
   var td = document.createElement('TD');
+  td.style = 'border: 1px solid black';
   td.innerHTML = 'Table Cell';
   tr.appendChild(td);
   tbody.appendChild(tr);
-  document.getElementById('table').appendChild(tbody);
+  // document.getElementById('table').appendChild(tbody);
+  table.appendChild(tbody); 
 }
     
 </script>
 
-
+  
 <script>
     
+  
     
 </script>
   
