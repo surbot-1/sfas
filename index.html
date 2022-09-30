@@ -1447,11 +1447,11 @@ function createTable() {
   // document.getElementById('table').appendChild(tbody);
   table.appendChild(tbody); 
   var tr = document.createElement('TR');
-  var td = document.createElement('TD');
-  td.style = 'border: 1px solid black';
+  var th = document.createElement('TH');
+  th.style = 'border: 1px solid black';
   // td.style.textAlign = 'center'; 
-  td.innerHTML = 'Table Cell';
-  tr.appendChild(td);
+  th.innerHTML = 'Sr. No.';
+  tr.appendChild(th);
   tbody.appendChild(tr); 
 }
     
@@ -1467,6 +1467,10 @@ function createRow(index,td0,td1,td2,td3) {
   var cell1 = row.insertCell(index+1);
   var cell2 = row.insertCell(index+2);
   var cell3 = row.insertCell(index+2);
+  cell0.style = 'border: 1px solid black';
+  cell1.style = 'border: 1px solid black';
+  cell2.style = 'border: 1px solid black';
+  cell3.style = 'border: 1px solid black';
   cell0.innerHTML = td0;
   cell1.innerHTML = td1;
   cell2.innerHTML = td2;
