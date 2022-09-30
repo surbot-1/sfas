@@ -1432,7 +1432,7 @@ function downloadB() {
   
     
 <script>
-  alert('2'); createTable(); 
+  alert('1'); createTable(); 
 function createTable() {
   var table = document.createElement('TABLE'); 
   table.setAttribute('id','table'); 
@@ -1448,9 +1448,10 @@ function createTable() {
   table.appendChild(tbody); 
   var tr = document.createElement('TR');
   var th = document.createElement('TH');
+  th.colSpan = '4'; 
   th.style = 'border: 1px solid black';
   // td.style.textAlign = 'center'; 
-  th.innerHTML = 'Sr. No.';
+  th.innerHTML = 'List of POS (Point Of Sale)';
   tr.appendChild(th);
   tbody.appendChild(tr); 
 }
@@ -1459,7 +1460,7 @@ function createTable() {
 
 
 <script>
-  createRow(0,'A','B','C','D');
+  createRow(1,'A','B','C','D');
 function createRow(index,td0,td1,td2,td3) {
   var tbody = document.getElementById('tbody');
   var row = tbody.insertRow(index);
