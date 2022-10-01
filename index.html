@@ -1437,12 +1437,12 @@ function downloadB() {
   
     
 <script>
-  alert('1'); 
+  alert('2'); 
 function createTable() {
   var table = document.createElement('TABLE'); 
   table.setAttribute('id','table'); 
   table.style =  'border: 1px solid black'; 
-  // table.style = 'border-collapse: collapse';
+  table.style = 'border-collapse: collapse';
   // table.style.textAlign = 'center';
   document.getElementById('p7').appendChild(table); 
   // var caption = document.getElementById('table').createCaption();
@@ -1451,7 +1451,7 @@ function createTable() {
   caption.innerHTML = '<i>List of POS (Point Of Sale)</i>'; 
   var tbody = document.createElement('TBODY');
   tbody.setAttribute('id','tbody'); 
-  tbody.style = 'border-collapse: collapse';
+  // tbody.style = 'border-collapse: collapse';
   // document.getElementById('table').appendChild(tbody);
   table.appendChild(tbody); 
   /* var tr = document.createElement('TR');
