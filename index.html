@@ -1432,7 +1432,7 @@ function downloadB() {
   
     
 <script>
-  alert('012i'); createTable(); 
+  alert('0'); createTable(); 
 function createTable() {
   var table = document.createElement('TABLE'); 
   table.setAttribute('id','table'); 
@@ -1448,7 +1448,7 @@ function createTable() {
   table.appendChild(tbody); */ 
   var tr = document.createElement('TR');
   var td = document.createElement('TD');
-  // td.colSpan = '4'; 
+  td.colSpan = '4'; 
   td.style = 'border: 1px solid black';
   // td.style.textAlign = 'center'; 
   td.innerHTML = 'List of POS (Point Of Sale)';
@@ -1466,14 +1466,14 @@ function createTable() {
 function createRow(index,td0,td1,td2,td3) {
   var table = document.getElementById('table');
   var row = table.insertRow(index);
-  var cell0 = row.insertCell((index+0));
-  var cell1 = row.insertCell((index+1));
-  var cell2 = row.insertCell((index+2));
-  var cell3 = row.insertCell((index+3));
-  cell0.style = 'border: 1px solid black';
+  var cell0 = row.insertCell(index+0);
+  var cell1 = row.insertCell(index+1);
+  var cell2 = row.insertCell(index+2);
+  var cell3 = row.insertCell(index+3);
+  /* cell0.style = 'border: 1px solid black';
   cell1.style = 'border: 1px solid black';
   cell2.style = 'border: 1px solid black';
-  cell3.style = 'border: 1px solid black';
+  cell3.style = 'border: 1px solid black'; */
   cell0.innerHTML = td0;
   cell1.innerHTML = td1;
   cell2.innerHTML = td2;
