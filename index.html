@@ -1441,7 +1441,8 @@ function downloadB() {
 function createTable() {
   var table = document.createElement('TABLE'); 
   table.setAttribute('id','table'); 
-  table.style =  'border: 1px solid black';
+  table.style =  'border: 1px solid black'; 
+  // table.style = 'border-collapse: collapse';
   // table.style.textAlign = 'center';
   document.getElementById('p7').appendChild(table); 
   // var caption = document.getElementById('table').createCaption();
@@ -1450,6 +1451,7 @@ function createTable() {
   caption.innerHTML = '<i>List of POS (Point Of Sale)</i>'; 
   var tbody = document.createElement('TBODY');
   tbody.setAttribute('id','tbody'); 
+  tbody.style = 'border-collapse: collapse';
   // document.getElementById('table').appendChild(tbody);
   table.appendChild(tbody); 
   /* var tr = document.createElement('TR');
@@ -1484,12 +1486,12 @@ function createRow(index,td0,td1,td2,td3,td4,td5) {
   cell4.style = 'border: 1px solid black';
   cell5.style = 'border: 1px solid black'; 
   // cell.style.borderCollapse = "collapse"; 
-  cell0.style = 'border-collapse: collapse';
+  /* cell0.style = 'border-collapse: collapse';
   cell1.style = 'border-collapse: collapse';
   cell2.style = 'border-collapse: collapse';
   cell3.style = 'border-collapse: collapse';
   cell4.style = 'border-collapse: collapse';
-  cell5.style = 'border-collapse: collapse';
+  cell5.style = 'border-collapse: collapse'; */ 
   cell0.style.textAlign = 'center'; 
   cell1.style.textAlign = 'center'; 
   cell2.style.textAlign = 'center'; 
