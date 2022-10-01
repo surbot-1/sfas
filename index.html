@@ -733,7 +733,7 @@
                   /* var latitude = cursor.value.latitude; 
                    var longitude = cursor.value.longitude; */ 
                   var ctopno = cursor.key;  
-                  /* var altno = cursor.value.altno; */ 
+                  var altno = cursor.value.altno; 
                   /* var emailid = cursor.value.emailid; 
                    var posname = cursor.value.posname;  
                    var posgend = cursor.value.posgend; */ 
@@ -796,11 +796,11 @@
                   allpos += 
                     count + '.' + ' ' + 
                     ctopno + ' ' + 
-                    /* altno + ' ' + */ 
+                    /* altno + ' ' + */
                     shopname + ' ' + 
                     street + ' ' +
                     locality + '\n'; 
-                 createRow(count,count,ctopno,shopname,street); 
+                 createRow(count,count,ctopno,shopname,street,locality,altno); 
                   cursor.continue();
                } else { 
                   document.getElementById('p6').innerHTML += 
@@ -1453,7 +1453,7 @@ function createTable() {
   table.appendChild(tbody); 
   var tr = document.createElement('TR');
   var td = document.createElement('TD');
-  td.colSpan = '4'; 
+  td.colSpan = '6'; 
   td.style = 'border: 1px solid black';
   td.style.textAlign = 'center'; 
   td.innerHTML = 'List of POS (Point Of Sale)';
@@ -1466,25 +1466,33 @@ function createTable() {
 
 <script>
   
-function createRow(index,td0,td1,td2,td3) {
+function createRow(index,td0,td1,td2,td3,td4,td5) {
   var tbody = document.getElementById('tbody');
   var row = tbody.insertRow(index);
   var cell0 = row.insertCell(0);
   var cell1 = row.insertCell(1);
   var cell2 = row.insertCell(2);
   var cell3 = row.insertCell(3);
+  var cell4 = row.insertCell(4);
+  var cell5 = row.insertCell(5);
   cell0.style = 'border: 1px solid black';
   cell1.style = 'border: 1px solid black';
   cell2.style = 'border: 1px solid black';
   cell3.style = 'border: 1px solid black'; 
+  cell4.style = 'border: 1px solid black';
+  cell5.style = 'border: 1px solid black'; 
   cell0.style.textAlign = 'center'; 
   cell1.style.textAlign = 'center'; 
   cell2.style.textAlign = 'center'; 
   cell3.style.textAlign = 'center'; 
+  cell4.style.textAlign = 'center'; 
+  cell5.style.textAlign = 'center'; 
   cell0.innerHTML = td0;
   cell1.innerHTML = td1;
   cell2.innerHTML = td2;
   cell3.innerHTML = td3;
+  cell2.innerHTML = td4;
+  cell3.innerHTML = td5;
 }
 
 function removeRow(index) {
@@ -1497,7 +1505,7 @@ function removeRow(index) {
 <script>
     
 createTable(); 
-createRow(1,'Sr. No.','C-TOP UP No.','Address','Alternate No.'); 
+createRow(1,'Sr. No.','C-TOP UP No.','Shop Name','Street','Locality','Alternate No.'); 
 createRow(2,'A1','B','C','D');
 createRow(3,'A2','B','C','D');
   
