@@ -1451,14 +1451,14 @@ function createTable() {
   tbody.setAttribute('id','tbody'); 
   // document.getElementById('table').appendChild(tbody);
   table.appendChild(tbody); 
-  var tr = document.createElement('TR');
+  /* var tr = document.createElement('TR');
   var td = document.createElement('TD');
   td.colSpan = '6'; 
   td.style = 'border: 1px solid black';
   td.style.textAlign = 'center'; 
   td.innerHTML = 'List of POS (Point Of Sale)';
   tr.appendChild(td); 
-  tbody.appendChild(tr); 
+  tbody.appendChild(tr); */ 
 }
     
 </script>
@@ -1505,9 +1505,9 @@ function removeRow(index) {
 <script>
     
 createTable(); 
-createRow(1,'Sr. No.','C-TOP UP No.','Shop Name','Street','Locality','Alternate No.'); 
-createRow(2,'A1','B','C','D');
-createRow(3,'A2','B','C','D');
+createRow(0,'Sr. No.','C-TOP UP No.','Shop Name','Street','Locality','Alternate No.'); 
+// createRow(2,'A1','B','C','D');
+// createRow(3,'A2','B','C','D');
   
 </script>
   
