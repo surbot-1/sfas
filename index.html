@@ -1432,7 +1432,7 @@ function downloadB() {
   
     
 <script>
-  alert('3'); 
+  alert('0'); 
 function createTable() {
   var table = document.createElement('TABLE'); 
   table.setAttribute('id','table'); 
@@ -1442,10 +1442,10 @@ function createTable() {
   // var caption = document.getElementById('table').createCaption();
   var caption = table.createCaption(); 
   caption.innerHTML = '<i>List of POS (Point Of Sale)</i>'; 
-  /* var tbody = document.createElement('TBODY');
+  var tbody = document.createElement('TBODY');
   tbody.setAttribute('id','tbody'); 
   // document.getElementById('table').appendChild(tbody);
-  table.appendChild(tbody); */ 
+  table.appendChild(tbody); 
   var tr = document.createElement('TR');
   var td = document.createElement('TD');
   td.colSpan = '4'; 
@@ -1453,7 +1453,7 @@ function createTable() {
   // td.style.textAlign = 'center'; 
   td.innerHTML = 'List of POS (Point Of Sale)';
   tr.appendChild(td); 
-  table.appendChild(tr); 
+  tbody.appendChild(tr); 
 }
     
 </script>
@@ -1461,13 +1461,13 @@ function createTable() {
 
 <script>
   
-function createRow(r,td0,td1,td2,td3) {
-  var table = document.getElementById('table');
-  var row = table.insertRow(r);
-  var cell0 = row.insertCell(r+0);
-  var cell1 = row.insertCell(r+1);
-  var cell2 = row.insertCell(r+2);
-  var cell3 = row.insertCell(r+3);
+function createRow(index,td0,td1,td2,td3) {
+  var tbody = document.getElementById('tbody');
+  var row = tbody.insertRow(index);
+  var cell0 = row.insertCell(0);
+  var cell1 = row.insertCell(1);
+  var cell2 = row.insertCell(2);
+  var cell3 = row.insertCell(3);
   cell0.style = 'border: 1px solid black';
   cell1.style = 'border: 1px solid black';
   cell2.style = 'border: 1px solid black';
@@ -1482,8 +1482,8 @@ function createRow(r,td0,td1,td2,td3) {
   cell3.innerHTML = td3;
 }
 
-function removeRow(r) {
-  document.getElementById('table').deleteRow(r);
+function removeRow(index) {
+  document.getElementById('table').deleteRow(index);
 }
   
 </script>
@@ -1493,8 +1493,8 @@ function removeRow(r) {
     
 createTable(); 
 createRow(0,'A0','B','C','D'); 
-createRow(0,'A1','B','C','D');
-createRow(1,'A2','B','C','D');
+createRow(1,'A1','B','C','D');
+createRow(2,'A2','B','C','D');
   
 </script>
   
