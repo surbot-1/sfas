@@ -722,6 +722,8 @@
             document.getElementById('p6').innerHTML =''; 
             document.getElementById('p6').innerHTML += 
             'List of POS (Point Of Sale)' + '<br>';
+           createTable(); 
+           createRow(0,'Sr. No.','C-TOP UP No.','Shop Name','Street','Locality','Alternate No.'); 
             var serialno = 0; var count = ''; 
             var transaction = db.transaction(['posbsnl']);
             var objectStore = transaction.objectStore('posbsnl');
@@ -824,6 +826,7 @@
           togglereadall = true; 
           document.getElementById('p6').innerHTML = ''; 
           allpos = ''; 
+          document.getElementById('p7').innerHTML = ''; 
         } 
     } 
     
@@ -1515,8 +1518,8 @@ function removeRow(index) {
   
 <script>
     
-createTable(); 
-createRow(0,'Sr. No.','C-TOP UP No.','Shop Name','Street','Locality','Alternate No.'); 
+// createTable(); 
+// createRow(0,'Sr. No.','C-TOP UP No.','Shop Name','Street','Locality','Alternate No.'); 
 // createRow(2,'A1','B','C','D');
 // createRow(3,'A2','B','C','D');
   
