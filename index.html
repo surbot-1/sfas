@@ -741,9 +741,9 @@
     function readAll() { 
          if (togglereadall) { 
             togglereadall = false; 
-            document.getElementById('p6').innerHTML =''; 
+            /* document.getElementById('p6').innerHTML =''; 
             document.getElementById('p6').innerHTML += 
-            'List of POS (Point Of Sale)' + '<br>';
+            'List of POS (Point Of Sale)' + '<br>'; */ 
            // createTable(); 
            // createRow(0,'Sr. No.','C-TOP UP No.','Shop Name','Street','Locality','Alternate No.'); 
             var serialno = 0; var count = ''; 
@@ -827,8 +827,8 @@
                  createRow(count,count,ctopno,shopname,street,locality,altno); 
                   cursor.continue();
                } else { 
-                  document.getElementById('p6').innerHTML += 
-                  'Total POS Count = ' + count + '<br>' + '<br>'; 
+                  /* document.getElementById('p6').innerHTML += 
+                  'Total POS Count = ' + count + '<br>' + '<br>'; */
                  
                    allpos = 'List of POS (Point Of Sale)' + '\n' + 
                             allpos +
@@ -848,7 +848,7 @@
           togglereadall = true; 
           document.getElementById('p6').innerHTML = ''; 
           allpos = ''; 
-          // document.getElementById('p7').innerHTML = ''; 
+          document.getElementById('p7').innerHTML = ''; 
         } 
     } 
     
