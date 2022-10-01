@@ -1441,7 +1441,7 @@ function createTable() {
   document.getElementById('p7').appendChild(table); 
   // var caption = document.getElementById('table').createCaption();
   var caption = table.createCaption(); 
-  caption.innerHTML = '<b>List of POS (Point Of Sale)</b>'; 
+  caption.innerHTML = '<i>List of POS (Point Of Sale)</i>'; 
   /* var tbody = document.createElement('TBODY');
   tbody.setAttribute('id','tbody'); 
   // document.getElementById('table').appendChild(tbody);
@@ -1470,10 +1470,10 @@ function createRow(index,td0,td1,td2,td3) {
   var cell1 = row.insertCell(index+1);
   var cell2 = row.insertCell(index+2);
   var cell3 = row.insertCell(index+3);
-  /* cell0.style = 'border: 1px solid black';
+  cell0.style = 'border: 1px solid black';
   cell1.style = 'border: 1px solid black';
   cell2.style = 'border: 1px solid black';
-  cell3.style = 'border: 1px solid black'; */
+  cell3.style = 'border: 1px solid black'; 
   cell0.innerHTML = td0;
   cell1.innerHTML = td1;
   cell2.innerHTML = td2;
