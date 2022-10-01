@@ -1432,7 +1432,7 @@ function downloadB() {
   
     
 <script>
-  alert('1'); createTable(); 
+  alert('2'); 
 function createTable() {
   var table = document.createElement('TABLE'); 
   table.setAttribute('id','table'); 
@@ -1460,9 +1460,7 @@ function createTable() {
 
 
 <script>
-  createRow(0,'A0','B','C','D'); 
-  createRow(1,'A1','B','C','D');
-  createRow(1,'A2','B','C','D');
+  
 function createRow(index,td0,td1,td2,td3) {
   var table = document.getElementById('table');
   var row = table.insertRow(index);
@@ -1493,7 +1491,10 @@ function deleteRow(index) {
   
 <script>
     
-  
+createTable(); 
+createRow(0,'A0','B','C','D'); 
+createRow(1,'A1','B','C','D');
+createRow(1,'A2','B','C','D');
   
 </script>
   
