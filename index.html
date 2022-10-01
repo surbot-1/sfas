@@ -1432,7 +1432,7 @@ function downloadB() {
   
     
 <script>
-  alert('0'); createTable(); 
+  alert('1'); createTable(); 
 function createTable() {
   var table = document.createElement('TABLE'); 
   table.setAttribute('id','table'); 
@@ -1474,6 +1474,10 @@ function createRow(index,td0,td1,td2,td3) {
   cell1.style = 'border: 1px solid black';
   cell2.style = 'border: 1px solid black';
   cell3.style = 'border: 1px solid black'; 
+  cell0.style.textAlign = 'center'; 
+  cell1.style.textAlign = 'center'; 
+  cell2.style.textAlign = 'center'; 
+  cell3.style.textAlign = 'center'; 
   cell0.innerHTML = td0;
   cell1.innerHTML = td1;
   cell2.innerHTML = td2;
