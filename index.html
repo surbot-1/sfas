@@ -744,8 +744,8 @@
             /* document.getElementById('p6').innerHTML =''; 
             document.getElementById('p6').innerHTML += 
             'List of POS (Point Of Sale)' + '<br>'; */ 
-           // createTable(); 
-           // createRow(0,'Sr. No.','C-TOP UP No.','Shop Name','Street','Locality','Alternate No.'); 
+            // createTable(); 
+            // createRow(0,'Sr. No.','C-TOP UP No.','Shop Name','Street','Locality','Alternate No.'); 
             var serialno = 0; var count = ''; 
             var transaction = db.transaction(['posbsnl']);
             var objectStore = transaction.objectStore('posbsnl');
@@ -1412,12 +1412,10 @@ function download() {
   var a = document.createElement('a');
   a.download = ctopno + '_info' + '.txt';
 
-  var t = new Blob([data], {
-  type: 'text/plain'
-  });
+  var t = new Blob([data], { type: 'text/plain' });
   a.href = window.URL.createObjectURL(t); 
+  a.click(); 
   window.URL.revokeObjectURL(a.href); 
-  a.click();
 } 
   
 function downloadA() { 
