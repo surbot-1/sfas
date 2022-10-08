@@ -1212,7 +1212,7 @@ function writeInfo() {
   
 function getInfo() { 
     latitude = info.substring(info.indexOf('Geolocation')+14, info.indexOf(',')-1); 
-    longitude = info.substring(info.indexOf(',')+2, info.indexOf('CTOPUP No')-1); 
+    longitude = info.substring(info.indexOf(',')+2, info.indexOf('CTOPUP No')-2); 
     ctopno = info.substring(info.indexOf('CTOPUP No')+12, info.indexOf('Alternate No')-1); 
     altno = info.substring(info.indexOf('Alternate No')+15, info.indexOf('Email ID')-1); 
     emailid = info.substring(info.indexOf('Email ID')+11, info.indexOf('Retailer Name')-1); 
